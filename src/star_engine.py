@@ -1,0 +1,2 @@
+class StarEngine:
+    pass
