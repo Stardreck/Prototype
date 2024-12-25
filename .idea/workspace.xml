@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6671e16-4158-46be-95da-418c63efd5e3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/welcome_screen.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/scenes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/games/game.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scenes/scene.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scenes/story_scene.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/star_engine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="44f35ecb-0e0b-49b4-b425-492516d7b32a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Prototype.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/games/story_game.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/star_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Stardreck.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Stardreck.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/games/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/star_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/star_engine.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,69 +32,108 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
+  &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2qfRp6buSQCJxAmP4bDoE8DVNdS" />
+  <component name="ProjectId" id="2pshE4dqkuv81BcAb8wR1KM9UUX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Stardreck.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.testing.executor": "Run",
-    "Python.testing2.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/temp/Stardreck/Prototype",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Python.Proto-01.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.Stardreck.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cable.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cable2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.glet.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pyglet.executor&quot;: &quot;Run&quot;,
+    &quot;Python.quiz_scene.executor&quot;: &quot;Run&quot;,
+    &quot;Python.story_scene.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.text-display.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;X:/Github/Stardreck/Prototype - Copy&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="X:\Github\Stardreck\Prototype\testing" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\marco\Documents\GitHub\Stardreck\Prototype\src" />
-      <recent name="C:\Users\marco\Documents\GitHub\Stardreck\Prototype\assets" />
+      <recent name="X:\Github\Stardreck\Prototype\testing" />
     </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.220" />
-        <option value="bundled-python-sdk-0fc6c617c4bd-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.220" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.180" />
+        <option value="bundled-python-sdk-85c76a3b01b3-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.180" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f6671e16-4158-46be-95da-418c63efd5e3" name="Changes" comment="" />
-      <created>1735051823158</created>
+      <changelist id="44f35ecb-0e0b-49b4-b425-492516d7b32a" name="Changes" comment="" />
+      <created>1733560578292</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1735051823158</updated>
-      <workItem from="1735051825117" duration="141000" />
-      <workItem from="1735051975829" duration="610000" />
-      <workItem from="1735052770649" duration="5546000" />
-      <workItem from="1735124769826" duration="1497000" />
+      <updated>1733560578292</updated>
+      <workItem from="1733560579971" duration="313000" />
+      <workItem from="1733560916626" duration="225000" />
+      <workItem from="1733561670653" duration="62000" />
+      <workItem from="1733561822228" duration="56000" />
+      <workItem from="1733563861240" duration="26516000" />
+      <workItem from="1733932070161" duration="595000" />
+      <workItem from="1733947404122" duration="3999000" />
+      <workItem from="1734026354421" duration="604000" />
+      <workItem from="1734116789366" duration="671000" />
+      <workItem from="1734119001292" duration="664000" />
+      <workItem from="1735051912485" duration="1908000" />
+      <workItem from="1735127367611" duration="1955000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test-01/debug.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Prototype$testing.coverage" NAME="testing Coverage Results" MODIFIED="1735123980181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Prototype$main.coverage" NAME="main Coverage Results" MODIFIED="1735125518404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Prototype$Stardreck.coverage" NAME="Stardreck Coverage Results" MODIFIED="1735125649915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/Prototype$testing2.coverage" NAME="testing2 Coverage Results" MODIFIED="1735124051810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Prototype$test.coverage" NAME="test Coverage Results" MODIFIED="1733581978282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Prototype$story_scene.coverage" NAME="story_scene Coverage Results" MODIFIED="1733587792329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proto-01/scenes" />
+    <SUITE FILE_PATH="coverage/Prototype$main.coverage" NAME="main Coverage Results" MODIFIED="1733588142210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proto-01" />
+    <SUITE FILE_PATH="coverage/Prototype$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1733565878841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Prototype$Proto_01.coverage" NAME="Proto-01 Coverage Results" MODIFIED="1734116827231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Prototype$cable.coverage" NAME="cable Coverage Results" MODIFIED="1733599661294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/Prototype$text_display.coverage" NAME="text-display Coverage Results" MODIFIED="1733581807469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Prototype$glet.coverage" NAME="glet Coverage Results" MODIFIED="1733950935829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/Prototype$cable2.coverage" NAME="cable2 Coverage Results" MODIFIED="1733649025966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/Prototype$quiz_scene.coverage" NAME="quiz_scene Coverage Results" MODIFIED="1733588510559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proto-01/scenes" />
+    <SUITE FILE_PATH="coverage/Prototype$Stardreck.coverage" NAME="Stardreck Coverage Results" MODIFIED="1735128960845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Prototype$pyglet.coverage" NAME="pyglet Coverage Results" MODIFIED="1733950203419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
   </component>
 </project>
