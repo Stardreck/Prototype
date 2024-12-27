@@ -21,4 +21,4 @@ def play_video(video_path):
         time.sleep(1)
 
 if __name__ == "__main__":
-    play_video("assets/test_video02.mp4")
+    play_video("../assets/test_video02.mp4")

@@ -17,3 +17,8 @@ Restart computer
 #### install pyglet
 inside this directory, open a new terminal and execute the following:
 pip install --upgrade pyglet
+
+#### install ffmpeg
+https://ffmpeg.org/download.html
+extract windows binaries to C:\ffmpeg\bin
+Add Path C:\ffmpeg\bin to system variables
