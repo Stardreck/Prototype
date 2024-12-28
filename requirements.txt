@@ -1,5 +1,4 @@
-pyglet
-python-vlc
+pygame
+pygame_gui
+pymunk
 numpy
-wheel
-pyogg

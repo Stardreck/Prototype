@@ -18,7 +18,11 @@ Restart computer
 inside this directory, open a new terminal and execute the following:
 pip install --upgrade pyglet
 
+#### install vlc
+https://www.videolan.org/
+
 #### install ffmpeg
-https://ffmpeg.org/download.html
-extract windows binaries to C:\ffmpeg\bin
+https://github.com/BtbN/FFmpeg-Builds/releases
+download ffmpeg-mater-latest-win64-gpl.zip
+extract content to C:\ffmpeg\bin
 Add Path C:\ffmpeg\bin to system variables
