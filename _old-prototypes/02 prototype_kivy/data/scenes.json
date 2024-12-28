@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "game_id": "classic",
+        "background": "assets/welcome_screen.jpeg",
+        "text": "Willkommen zu deinem Abenteuer im Classic-Modus!"
+    },
+    {
+        "id": 2,
+        "game_id": "classic",
+        "background": "assets/welcome_screen.jpeg",
+        "text": "Du hast eine wichtige Entscheidung zu treffen."
+    }
+]

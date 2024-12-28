@@ -4,40 +4,363 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44f35ecb-0e0b-49b4-b425-492516d7b32a" name="Changes" comment="json testing">
-      <change afterPath="$PROJECT_DIR$/01 prototype_pygame/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01 prototype_pygame/pygame_gui_testing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01 prototype_pygame/theme/gui.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02 prototype_kivy/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02 prototype_kivy/src/games/game.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02 prototype_kivy/src/star_engine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02 prototype_kivy/src/views/view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03 prototype_pyglet/data/scenes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03 prototype_pyglet/data/star_config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03 prototype_pyglet/src/games/story_game.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03 prototype_pyglet/src/plugins/video_player.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03 prototype_pyglet/src/star_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testing/dear_pygui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testing/dear_pygui_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testing/kivy_snake.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testing/testing_kivy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testing/video_kivy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testing/video_player_testing2.py" afterDir="false" />
+    <list default="true" id="44f35ecb-0e0b-49b4-b425-492516d7b32a" name="Changes" comment="project structure changed&#10;kivy, pyglet testing&#10;pygame init">
+      <change afterPath="$PROJECT_DIR$/_old-prototypes/pygame_menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/welcome_screen.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pygame_gui_testing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pygame_video_gui_testing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/games/game.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/games/story_game.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/plugins/video_player.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/star_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/star_engine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/intro_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/welcome_screen.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/02 prototype_kivy/assets/welcome_screen.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/scenes.json" beforeDir="false" afterPath="$PROJECT_DIR$/02 prototype_kivy/data/scenes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/star_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/02 prototype_kivy/data/star_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/03 prototype_pyglet/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01 prototype_pygame/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/pong.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01 prototype_pygame/pygame_gui_testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame_gui_button_testing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01 prototype_pygame/theme/gui.json" beforeDir="false" afterPath="$PROJECT_DIR$/theme/gui.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/assets/test_video01.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/assets/test_video01.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/assets/welcome_screen.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/assets/welcome_screen.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/data/scenes.json" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/data/scenes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/data/star_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/data/star_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/3Drendering/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/3Drendering/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/3Drendering/monkey.obj" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/3Drendering/monkey.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/3Drendering/objloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/3Drendering/objloader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/3Drendering/simple.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/3Drendering/simple.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/RST_Editor/editor.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/RST_Editor/editor.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/RST_Editor/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/RST_Editor/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/android/compass/android.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/android/compass/android.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/android/compass/compass.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/android/compass/compass.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/android/compass/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/android/compass/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/android/compass/needle.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/android/compass/needle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/android/compass/rose.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/android/compass/rose.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/android/takepicture/android.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/android/takepicture/android.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/android/takepicture/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/android/takepicture/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/android/takepicture/shadow32.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/android/takepicture/shadow32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/android/takepicture/takepicture.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/android/takepicture/takepicture.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/animation/animate.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/animation/animate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/application/app_suite.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/application/app_suite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/application/app_suite_data/testkvdir.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/application/app_suite_data/testkvdir.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/application/app_with_build.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/application/app_with_build.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/application/app_with_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/application/app_with_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/application/app_with_kv.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/application/app_with_kv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/application/app_with_kv_in_template1.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/application/app_with_kv_in_template1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/application/template1/test.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/application/template1/test.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/application/test.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/application/test.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/application/testkvfile.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/application/testkvfile.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/async/asyncio_advanced.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/async/asyncio_advanced.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/async/asyncio_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/async/asyncio_basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/async/trio_advanced.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/async/trio_advanced.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/async/trio_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/async/trio_basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12908_sweet_trip_mm_clap_hi.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12908_sweet_trip_mm_clap_hi.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12909_sweet_trip_mm_clap_lo.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12909_sweet_trip_mm_clap_lo.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12910_sweet_trip_mm_clap_mid.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12910_sweet_trip_mm_clap_mid.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12911_sweet_trip_mm_hat_cl.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12911_sweet_trip_mm_hat_cl.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12913_sweet_trip_mm_kick_hi.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12913_sweet_trip_mm_kick_hi.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12914_sweet_trip_mm_kick_lo.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12914_sweet_trip_mm_kick_lo.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12915_sweet_trip_mm_kick_mid.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12915_sweet_trip_mm_kick_mid.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12916_sweet_trip_mm_kwik_mod_01.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12916_sweet_trip_mm_kwik_mod_01.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12917_sweet_trip_mm_kwik_mod_02.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12917_sweet_trip_mm_kwik_mod_02.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12918_sweet_trip_mm_kwik_mod_03.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12918_sweet_trip_mm_kwik_mod_03.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12919_sweet_trip_mm_kwik_mod_04.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12919_sweet_trip_mm_kwik_mod_04.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12920_sweet_trip_mm_kwik_mod_05.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12920_sweet_trip_mm_kwik_mod_05.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12921_sweet_trip_mm_kwik_mod_06.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12921_sweet_trip_mm_kwik_mod_06.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12922_sweet_trip_mm_kwik_mod_07.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12922_sweet_trip_mm_kwik_mod_07.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12923_sweet_trip_mm_metal_clave.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12923_sweet_trip_mm_metal_clave.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12925_sweet_trip_mm_sweep_x.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12925_sweet_trip_mm_sweep_x.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12926_sweet_trip_mm_sweep_y.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12926_sweet_trip_mm_sweep_y.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/12927_sweet_trip_mm_sweep_z.wav" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/12927_sweet_trip_mm_sweep_z.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/audio.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/audio.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/audio/pitch.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/audio/pitch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/camera/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/camera/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/antialiasing.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/antialiasing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/bezier.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/bezier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/canvas_stress.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/canvas_stress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/circle.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/circle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/fbo_canvas.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/fbo_canvas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/kiwi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/kiwi.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/lines.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/lines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/lines_extended.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/lines_extended.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/mesh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/mesh_manipulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/mesh_manipulation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/mtexture1.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/mtexture1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/mtexture2.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/mtexture2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/multitexture.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/multitexture.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/repeat_texture.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/repeat_texture.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/rotation.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/rotation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/rounded_rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/rounded_rectangle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/scale.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/scale.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/stencil_canvas.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/stencil_canvas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/tesselate.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/tesselate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/texture.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/texture.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/canvas/texture_example_image.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/canvas/texture_example_image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/container/kv/1.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/container/kv/1.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/container/kv/2.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/container/kv/2.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/container/kv/3.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/container/kv/3.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/container/kv/root.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/container/kv/root.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/container/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/container/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/camera_puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/camera_puzzle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/AnchorLayoutContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/AnchorLayoutContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/BoxLayoutContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/BoxLayoutContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/ButtonContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/ButtonContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/CheckBoxContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/CheckBoxContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/FileChooserContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/FileChooserContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/FloatLayoutContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/FloatLayoutContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/GridLayoutContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/GridLayoutContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/LabelContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/LabelContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/MediaContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/MediaContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/PlaygroundContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/PlaygroundContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/PopupContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/PopupContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/ProgressBarContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/ProgressBarContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/RestContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/RestContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/ScatterContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/ScatterContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/SelectorsContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/SelectorsContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/StackLayoutContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/StackLayoutContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/TextContainer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/container_kvs/TextContainer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/kivycatalog.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/kivycatalog.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/kivycatalog/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/kivycatalog/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/multistroke/gesturedatabase.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/multistroke/gesturedatabase.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/multistroke/gesturedatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/multistroke/gesturedatabase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/multistroke/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/multistroke/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/multistroke/historymanager.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/multistroke/historymanager.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/multistroke/historymanager.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/multistroke/historymanager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/multistroke/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/multistroke/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/multistroke/multistroke.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/multistroke/multistroke.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/multistroke/settings.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/multistroke/settings.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/multistroke/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/multistroke/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/pictures/android.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/pictures/android.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/pictures/images/.empty" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/pictures/images/.empty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/pictures/images/Bubbles.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/pictures/images/Bubbles.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/pictures/images/Ill1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/pictures/images/Ill1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/pictures/images/Wall.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/pictures/images/Wall.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/pictures/images/faust_github.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/pictures/images/faust_github.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/pictures/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/pictures/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/pictures/pictures.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/pictures/pictures.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/pictures/shadow32.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/pictures/shadow32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/shadereditor/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/shadereditor/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/shadereditor/shadereditor.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/shadereditor/shadereditor.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/android.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/android.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/faust_github.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/faust_github.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/icons/README" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/icons/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/icons/bug.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/icons/bug.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/icons/chevron-left.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/icons/chevron-left.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/icons/chevron-right.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/icons/chevron-right.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/accordions.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/accordions.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/bubbles.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/bubbles.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/buttons.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/buttons.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/carousel.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/carousel.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/checkboxes.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/checkboxes.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/codeinput.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/codeinput.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/dropdown.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/dropdown.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/filechoosers.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/filechoosers.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/popups.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/popups.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/progressbar.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/progressbar.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/rstdocument.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/rstdocument.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/scatter.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/scatter.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/screenmanager.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/screenmanager.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/sliders.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/sliders.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/spinner.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/spinner.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/splitter.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/splitter.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/switches.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/switches.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/tabbedpanel + layouts.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/tabbedpanel + layouts.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/textinputs.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/textinputs.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/data/screens/togglebutton.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/data/screens/togglebutton.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/showcase/showcase.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/showcase/showcase.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/touchtracer/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/touchtracer/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/touchtracer/android.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/touchtracer/android.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/touchtracer/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/touchtracer/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/touchtracer/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/touchtracer/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/touchtracer/particle.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/touchtracer/particle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/demo/touchtracer/touchtracer.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/demo/touchtracer/touchtracer.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/frameworks/twisted/echo_client_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/frameworks/twisted/echo_client_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/frameworks/twisted/echo_server_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/frameworks/twisted/echo_server_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/frameworks/twisted/twistd_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/frameworks/twisted/twistd_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/gestures/gesture_board.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/gestures/gesture_board.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/gestures/my_gestures.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/gestures/my_gestures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/guide/designwithkv/controller.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/guide/designwithkv/controller.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/guide/designwithkv/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/guide/designwithkv/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/guide/firstwidget/1_skeleton.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/guide/firstwidget/1_skeleton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/guide/firstwidget/2_print_touch.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/guide/firstwidget/2_print_touch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/guide/firstwidget/3_draw_ellipse.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/guide/firstwidget/3_draw_ellipse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/guide/firstwidget/4_draw_line.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/guide/firstwidget/4_draw_line.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/guide/firstwidget/5_random_colors.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/guide/firstwidget/5_random_colors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/guide/firstwidget/6_button.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/guide/firstwidget/6_button.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/guide/quickstart/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/guide/quickstart/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/includes/button.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/includes/button.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/includes/layout.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/includes/layout.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/includes/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/includes/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/includes/test.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/includes/test.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/keyboard/android.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/keyboard/android.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/keyboard/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/keyboard/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/keyboard/numeric.json" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/keyboard/numeric.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kinect/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kinect/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kinect/kinectviewer.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kinect/kinectviewer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/app_button.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/app_button.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/app_camera.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/app_camera.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/app_fbo.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/app_fbo.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/app_layout.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/app_layout.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/app_logo.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/app_logo.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/app_scatter.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/app_scatter.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/app_stencil.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/app_stencil.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/app_video.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/app_video.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/builder_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/builder_template.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/ids/id_in_kv/id_in_kv.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/ids/id_in_kv/id_in_kv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/ids/id_in_kv/test.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/ids/id_in_kv/test.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/ids/kv_and_py/kv_and_py.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/ids/kv_and_py/kv_and_py.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/ids/kv_and_py/test.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/ids/kv_and_py/test.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/kivy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/kivy.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/kv/kvrun.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/kv/kvrun.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/miscellaneous/clipboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/miscellaneous/clipboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/miscellaneous/custom_titlebar.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/miscellaneous/custom_titlebar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/miscellaneous/imagesave.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/miscellaneous/imagesave.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/miscellaneous/joystick.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/miscellaneous/joystick.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/miscellaneous/multiple_dropfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/miscellaneous/multiple_dropfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/miscellaneous/on_textedit_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/miscellaneous/on_textedit_event.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/miscellaneous/opacitywindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/miscellaneous/opacitywindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/miscellaneous/shapecollisions.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/miscellaneous/shapecollisions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/miscellaneous/shapedwindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/miscellaneous/shapedwindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/miscellaneous/two_panes.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/miscellaneous/two_panes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/miscellaneous/urlrequest.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/miscellaneous/urlrequest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/settings/android.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/settings/android.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/settings/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/settings/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/shader/plasma.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/shader/plasma.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/shader/plasma.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/shader/plasma.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/shader/rotated.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/shader/rotated.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/shader/rotated.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/shader/rotated.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/shader/shadertree.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/shader/shadertree.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/shader/shadertree.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/shader/shadertree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/shader/tex3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/shader/tex3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/svg/benchmark.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/svg/benchmark.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/svg/cloud.svg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/svg/cloud.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/svg/main-smaa.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/svg/main-smaa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/svg/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/svg/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/svg/music.svg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/svg/music.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/svg/rotated.svg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/svg/rotated.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/svg/ship.svg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/svg/ship.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/svg/sun.svg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/svg/sun.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/svg/tiger.svg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/svg/tiger.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/text/pango_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/text/pango_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/notes/final/data/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/notes/final/data/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/notes/final/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/notes/final/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/notes/final/note.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/notes/final/note.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/pong/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/pong/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/pong/pong.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/pong/pong.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/pong/steps/step1/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/pong/steps/step1/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/pong/steps/step1/pong.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/pong/steps/step1/pong.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/pong/steps/step2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/pong/steps/step2/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/pong/steps/step2/pong.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/pong/steps/step2/pong.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/pong/steps/step3/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/pong/steps/step3/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/pong/steps/step3/pong.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/pong/steps/step3/pong.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/pong/steps/step4/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/pong/steps/step4/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/pong/steps/step4/pong.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/pong/steps/step4/pong.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/pong/steps/step5/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/pong/steps/step5/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/tutorials/pong/steps/step5/pong.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/tutorials/pong/steps/step5/pong.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/accordion_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/accordion_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/actionbar.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/actionbar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/asyncimage.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/asyncimage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/boxlayout_poshint.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/boxlayout_poshint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/bubble_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/bubble_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/carousel_buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/carousel_buttons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/cityCC0.jsa" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/cityCC0.jsa" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/cityCC0.mpg" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/cityCC0.mpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/cityCC0.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/cityCC0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/codeinput.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/codeinput.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/codeinputtest.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/codeinputtest.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/colorpicker.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/colorpicker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/colorusage.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/colorusage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/compound_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/compound_selection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/customcollide.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/customcollide.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/effectwidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/effectwidget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/effectwidget2.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/effectwidget2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/effectwidget3_advanced.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/effectwidget3_advanced.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/fbowidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/fbowidget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/focus_behavior.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/focus_behavior.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/image_mipmap.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/image_mipmap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/keyboardlistener.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/keyboardlistener.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/label_mipmap.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/label_mipmap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/label_sizing.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/label_sizing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/label_text_size.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/label_text_size.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/label_with_markup.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/label_with_markup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/lang_dynamic_classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/lang_dynamic_classes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/pagelayout.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/pagelayout.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/popup_with_kv.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/popup_with_kv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/recycleview/basic_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/recycleview/basic_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/recycleview/infinite_scrolling.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/recycleview/infinite_scrolling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/recycleview/key_viewclass.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/recycleview/key_viewclass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/recycleview/messenger.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/recycleview/messenger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/recycleview/pull_to_refresh.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/recycleview/pull_to_refresh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/recycleview/rv_animate_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/recycleview/rv_animate_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/rstexample.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/rstexample.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/scatter.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/scatter.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/scatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/screenmanager.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/screenmanager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/scrollview.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/scrollview.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/scrollview.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/scrollview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/sequenced_images/android.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/sequenced_images/android.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/sequenced_images/data/images/bird.zip" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/sequenced_images/data/images/bird.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/sequenced_images/data/images/button_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/sequenced_images/data/images/button_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/sequenced_images/data/images/button_white_animated.zip" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/sequenced_images/data/images/button_white_animated.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/sequenced_images/data/images/cube.zip" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/sequenced_images/data/images/cube.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/sequenced_images/data/images/info.png" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/sequenced_images/data/images/info.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/sequenced_images/data/images/info.zip" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/sequenced_images/data/images/info.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/sequenced_images/data/images/simple_cv_joint_animated.gif" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/sequenced_images/data/images/simple_cv_joint_animated.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/sequenced_images/main.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/sequenced_images/main.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/sequenced_images/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/sequenced_images/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/sequenced_images/uix/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/sequenced_images/uix/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/sequenced_images/uix/custom_button.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/sequenced_images/uix/custom_button.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/shorten_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/shorten_text.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/spinner.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/spinner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/splitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/splitter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/tabbed_panel_showcase.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/tabbed_panel_showcase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/tabbedpanel.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/tabbedpanel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/textalign.kv" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/textalign.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/textalign.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/textalign.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/textinput.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/textinput.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/unicode_textinput.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/unicode_textinput.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/examples/widgets/videoplayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/examples/widgets/videoplayer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/src/games/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/src/games/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/src/games/story_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/src/games/story_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/src/star_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/src/star_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/src/star_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/src/star_engine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02 prototype_kivy/src/views/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/02 prototype_kivy/src/views/view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 prototype_pyglet/data/scenes.json" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/03 prototype_pyglet/data/scenes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 prototype_pyglet/data/star_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/03 prototype_pyglet/data/star_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 prototype_pyglet/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/03 prototype_pyglet/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 prototype_pyglet/src/games/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/03 prototype_pyglet/src/games/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 prototype_pyglet/src/games/story_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/03 prototype_pyglet/src/games/story_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 prototype_pyglet/src/plugins/video_player.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/03 prototype_pyglet/src/plugins/video_player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 prototype_pyglet/src/scenes/scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/03 prototype_pyglet/src/scenes/scene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 prototype_pyglet/src/scenes/story_scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/03 prototype_pyglet/src/scenes/story_scene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 prototype_pyglet/src/star_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/03 prototype_pyglet/src/star_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 prototype_pyglet/src/star_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/03 prototype_pyglet/src/star_engine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 prototype_pyglet/src/views/main_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/03 prototype_pyglet/src/views/main_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03 prototype_pyglet/src/views/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/_old-prototypes/03 prototype_pyglet/src/views/view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/games/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/03 prototype_pyglet/src/games/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/games/story_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/02 prototype_kivy/src/games/story_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/03 prototype_pyglet/src/scenes/scene.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/story_scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/03 prototype_pyglet/src/scenes/story_scene.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/star_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/02 prototype_kivy/src/star_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/star_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/03 prototype_pyglet/src/star_engine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/main_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/03 prototype_pyglet/src/views/main_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/03 prototype_pyglet/src/views/view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/dear_pygui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/dear_pygui_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/kivy_snake.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/merge.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/merged_code.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/testing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/testing2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/testing3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/testing_kivy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/text_testing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/video_kivy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/video_player_testing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/video_player_testing2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/video_pyglet_vlc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/video_tkinter_vlc.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,9 +422,13 @@
     "Python.kivy_snake.executor": "Run",
     "Python.main.executor": "Run",
     "Python.merge.executor": "Run",
+    "Python.pong.executor": "Run",
     "Python.pygame_gui.executor": "Run",
     "Python.pygame_gui_testing.executor": "Run",
+    "Python.pygame_menu.executor": "Run",
+    "Python.pygame_video_gui_testing.executor": "Run",
     "Python.pyglet.executor": "Run",
+    "Python.pyvidplayer.executor": "Run",
     "Python.quiz_scene.executor": "Run",
     "Python.run.executor": "Run",
     "Python.story_scene.executor": "Run",
@@ -126,29 +453,30 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "X:/Github/Stardreck/Prototype/data",
+    "last_opened_file_path": "X:/Github/Stardreck/Prototype/assets",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="X:\Github\Stardreck\Prototype\assets" />
+      <recent name="X:\Github\Stardreck\Prototype\01 prototype_pygame\src\views" />
+      <recent name="X:\Github\Stardreck\Prototype\01 prototype_pygame\src\games" />
       <recent name="X:\Github\Stardreck\Prototype\data" />
       <recent name="X:\Github\Stardreck\Prototype\src" />
-      <recent name="X:\Github\Stardreck\Prototype\src\games" />
-      <recent name="X:\Github\Stardreck\Prototype\testing" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\Github\Stardreck\Prototype\_old-prototypes" />
+      <recent name="X:\Github\Stardreck\Prototype" />
       <recent name="X:\Github\Stardreck\Prototype\01 prototype_pygame" />
       <recent name="X:\Github\Stardreck\Prototype\prototype_kivy" />
       <recent name="X:\Github\Stardreck\Prototype\prototype_pyglet" />
-      <recent name="X:\Github\Stardreck\Prototype\pyglet_testing" />
-      <recent name="X:\Github\Stardreck\Prototype\assets" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -183,7 +511,8 @@
       <workItem from="1735223864821" duration="7117000" />
       <workItem from="1735295425104" duration="3494000" />
       <workItem from="1735300312810" duration="8583000" />
-      <workItem from="1735374837055" duration="1453000" />
+      <workItem from="1735374837055" duration="2773000" />
+      <workItem from="1735377653499" duration="8135000" />
     </task>
     <task id="LOCAL-00001" summary="testing game loop, video playback">
       <option name="closed" value="true" />
@@ -201,7 +530,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735232531922</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="project structure changed&#10;kivy, pyglet testing&#10;pygame init">
+      <option name="closed" value="true" />
+      <created>1735376606528</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1735376606528</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +557,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testing game loop, video playback" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing game loop, video playback" />
+    <MESSAGE value="project structure changed&#10;kivy, pyglet testing&#10;pygame init" />
+    <option name="LAST_COMMIT_MESSAGE" value="project structure changed&#10;kivy, pyglet testing&#10;pygame init" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -238,42 +576,46 @@
     <SUITE FILE_PATH="coverage/Prototype$effectwidget.coverage" NAME="effectwidget Coverage Results" MODIFIED="1735303936997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
     <SUITE FILE_PATH="coverage/Prototype$story_scene.coverage" NAME="story_scene Coverage Results" MODIFIED="1733587792329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proto-01/scenes" />
     <SUITE FILE_PATH="coverage/Prototype$asyncio_advanced.coverage" NAME="asyncio_advanced Coverage Results" MODIFIED="1735303866053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/async" />
-    <SUITE FILE_PATH="coverage/Prototype$main.coverage" NAME="main Coverage Results" MODIFIED="1735374946132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/prototype_kivy" />
+    <SUITE FILE_PATH="coverage/Prototype$pygame_video_gui_testing.coverage" NAME="pygame_video_gui_testing Coverage Results" MODIFIED="1735385728950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Prototype$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1733565878841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Prototype$video_background_testing.coverage" NAME="video_background_testing Coverage Results" MODIFIED="1735232122083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Prototype$dear_pygui.coverage" NAME="dear_pygui Coverage Results" MODIFIED="1735375702139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$animate.coverage" NAME="animate Coverage Results" MODIFIED="1735303847069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/animation" />
-    <SUITE FILE_PATH="coverage/Prototype$video_tkinter_vlc.coverage" NAME="video_tkinter_vlc Coverage Results" MODIFIED="1735300563493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$pygame_gui.coverage" NAME="pygame_gui Coverage Results" MODIFIED="1735375874340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
-    <SUITE FILE_PATH="coverage/Prototype$cable.coverage" NAME="cable Coverage Results" MODIFIED="1733599661294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
-    <SUITE FILE_PATH="coverage/Prototype$run.coverage" NAME="run Coverage Results" MODIFIED="1735292590558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/pyglet_projects-master/projects/snake_basic" />
     <SUITE FILE_PATH="coverage/Prototype$video_kivy.coverage" NAME="video_kivy Coverage Results" MODIFIED="1735305789972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$cable2.coverage" NAME="cable2 Coverage Results" MODIFIED="1733649025966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$video_pyglet_vlc.coverage" NAME="video_pyglet_vlc Coverage Results" MODIFIED="1735300524367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$image_mipmap.coverage" NAME="image_mipmap Coverage Results" MODIFIED="1735303989549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
+    <SUITE FILE_PATH="coverage/Prototype$pygame_menu.coverage" NAME="pygame_menu Coverage Results" MODIFIED="1735381397524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/_old-prototypes" />
+    <SUITE FILE_PATH="coverage/Prototype$merge.coverage" NAME="merge Coverage Results" MODIFIED="1735302506401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/Prototype$video_player_testing.coverage" NAME="video_player_testing Coverage Results" MODIFIED="1735298263343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/Prototype$text_testing.coverage" NAME="text_testing Coverage Results" MODIFIED="1735300291939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/Prototype$effectwidget2.coverage" NAME="effectwidget2 Coverage Results" MODIFIED="1735303958996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
+    <SUITE FILE_PATH="coverage/Prototype$video_player_testing2.coverage" NAME="video_player_testing2 Coverage Results" MODIFIED="1735300781780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/Prototype$fbowidget.coverage" NAME="fbowidget Coverage Results" MODIFIED="1735303974823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
+    <SUITE FILE_PATH="coverage/Prototype$text_display.coverage" NAME="text-display Coverage Results" MODIFIED="1733581807469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Prototype$glet.coverage" NAME="glet Coverage Results" MODIFIED="1733950935829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/Prototype$app_with_kv.coverage" NAME="app_with_kv Coverage Results" MODIFIED="1735303834802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/application" />
+    <SUITE FILE_PATH="coverage/Prototype$main.coverage" NAME="main Coverage Results" MODIFIED="1735385747894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/_old-prototypes/Menu-System-PyGame-main" />
+    <SUITE FILE_PATH="coverage/Prototype$video_tkinter_vlc.coverage" NAME="video_tkinter_vlc Coverage Results" MODIFIED="1735300563493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/Prototype$run.coverage" NAME="run Coverage Results" MODIFIED="1735292590558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/pyglet_projects-master/projects/snake_basic" />
+    <SUITE FILE_PATH="coverage/Prototype$cable.coverage" NAME="cable Coverage Results" MODIFIED="1733599661294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$quiz_scene.coverage" NAME="quiz_scene Coverage Results" MODIFIED="1733588510559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proto-01/scenes" />
     <SUITE FILE_PATH="coverage/Prototype$asyncimage.coverage" NAME="asyncimage Coverage Results" MODIFIED="1735303926249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
+    <SUITE FILE_PATH="coverage/Prototype$pong.coverage" NAME="pong Coverage Results" MODIFIED="1735381223739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/_old-prototypes" />
     <SUITE FILE_PATH="coverage/Prototype$testing_kivy.coverage" NAME="testing_kivy Coverage Results" MODIFIED="1735305946892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
-    <SUITE FILE_PATH="coverage/Prototype$Stardreck.coverage" NAME="Stardreck Coverage Results" MODIFIED="1735374849954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Prototype$Stardreck.coverage" NAME="Stardreck Coverage Results" MODIFIED="1735386923707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Prototype$videoplayer.coverage" NAME="videoplayer Coverage Results" MODIFIED="1735303999330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
-    <SUITE FILE_PATH="coverage/Prototype$pygame_gui_testing.coverage" NAME="pygame_gui_testing Coverage Results" MODIFIED="1735376135717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01 prototype_pygame" />
-    <SUITE FILE_PATH="coverage/Prototype$merge.coverage" NAME="merge Coverage Results" MODIFIED="1735302506401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
-    <SUITE FILE_PATH="coverage/Prototype$text_testing.coverage" NAME="text_testing Coverage Results" MODIFIED="1735300291939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
-    <SUITE FILE_PATH="coverage/Prototype$video_player_testing.coverage" NAME="video_player_testing Coverage Results" MODIFIED="1735298263343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/Prototype$pygame_gui_testing.coverage" NAME="pygame_gui_testing Coverage Results" MODIFIED="1735381863001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Prototype$testing.coverage" NAME="testing Coverage Results" MODIFIED="1735130985972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Prototype$effectwidget2.coverage" NAME="effectwidget2 Coverage Results" MODIFIED="1735303958996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
     <SUITE FILE_PATH="coverage/Prototype$Proto_01.coverage" NAME="Proto-01 Coverage Results" MODIFIED="1734116827231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Prototype$effectwidget3_advanced.coverage" NAME="effectwidget3_advanced Coverage Results" MODIFIED="1735303967528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
-    <SUITE FILE_PATH="coverage/Prototype$video_player_testing2.coverage" NAME="video_player_testing2 Coverage Results" MODIFIED="1735300781780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$kivy_snake.coverage" NAME="kivy_snake Coverage Results" MODIFIED="1735305336338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$app_with_build.coverage" NAME="app_with_build Coverage Results" MODIFIED="1735303841273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/application" />
     <SUITE FILE_PATH="coverage/Prototype$accordion_1.coverage" NAME="accordion_1 Coverage Results" MODIFIED="1735303912711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
     <SUITE FILE_PATH="coverage/Prototype$testing_kivy2.coverage" NAME="testing_kivy2 Coverage Results" MODIFIED="1735304989091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
-    <SUITE FILE_PATH="coverage/Prototype$fbowidget.coverage" NAME="fbowidget Coverage Results" MODIFIED="1735303974823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
-    <SUITE FILE_PATH="coverage/Prototype$text_display.coverage" NAME="text-display Coverage Results" MODIFIED="1733581807469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Prototype$glet.coverage" NAME="glet Coverage Results" MODIFIED="1733950935829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/Prototype$pyvidplayer.coverage" NAME="pyvidplayer Coverage Results" MODIFIED="1735381100060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/_old-prototypes/Video-PyGame-main" />
     <SUITE FILE_PATH="coverage/Prototype$actionbar.coverage" NAME="actionbar Coverage Results" MODIFIED="1735303917810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
-    <SUITE FILE_PATH="coverage/Prototype$app_with_kv.coverage" NAME="app_with_kv Coverage Results" MODIFIED="1735303834802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/application" />
     <SUITE FILE_PATH="coverage/Prototype$testing3.coverage" NAME="testing3 Coverage Results" MODIFIED="1735230622914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Prototype$video_background.coverage" NAME="video_background Coverage Results" MODIFIED="1735298646419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$pyglet.coverage" NAME="pyglet Coverage Results" MODIFIED="1733950203419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
