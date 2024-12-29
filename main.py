@@ -1,5 +1,7 @@
 from src.star_engine import StarEngine
 from src.games.story_game import StoryGame
+
+
 def main():
     # init game engine
     engine = StarEngine()
