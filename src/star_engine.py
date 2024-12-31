@@ -89,6 +89,7 @@ class StarEngine:
         self.view_manager.set_view("main")
         self.view_manager.render()
 
+
     def kill(self):
         pygame.quit()
         sys.exit()
@@ -99,25 +100,26 @@ class StarEngine:
         # self.play_intro()
         # display the game main menu, contains own event loop
         if not self.show_main_menu():
-            self.kill()
+            print("todo if not show main menu")
+            # elf.kill()
 
         # main game loop
-        while self.is_running:
-            # Calculate delta_time
-            delta_time = self.clock.tick(60) / 1000.0  # 60 FPS, convert milliseconds to seconds
-
-            # Event handling
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    self.is_running = False
-                elif event.type == pygame.KEYDOWN:
-                    self.on_key_press(event)
-
-            # Update the game state
-            self.update(delta_time)
-
-            # Render the screen
-            self.on_draw()
-
-        # Quit application
-        pygame.quit()
+        # while self.is_running:
+        #     # Calculate delta_time
+        #     delta_time = self.clock.tick(60) / 1000.0  # 60 FPS, convert milliseconds to seconds
+        #
+        #     # Event handling
+        #     for event in pygame.event.get():
+        #         if event.type == pygame.QUIT:
+        #             self.is_running = False
+        #         elif event.type == pygame.KEYDOWN:
+        #             self.on_key_press(event)
+        #
+        #     # Update the game state
+        #     self.update(delta_time)
+        #
+        #     # Render the screen
+        #     self.on_draw()
+        #
+        # # Quit application
+        # pygame.quit()

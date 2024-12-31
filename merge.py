@@ -1,39 +1,56 @@
 import os
 
-# Quell- und Zielverzeichnisse definieren
-SRC_DIR = "src"
-ROOT_FILE = "main.py"
-OUTPUT_FILE = "temp/merged.py"
+def get_folder_structure(base_dirs):
+    """Erstellt die Ordnerstruktur als String."""
+    structure = []
+    for base_dir in base_dirs:
+        for root, dirs, files in os.walk(base_dir):
+            level = root.replace(base_dir, '').count(os.sep)
+            indent = '    ' * level
+            structure.append(f"{indent}{os.path.basename(root)}/")
+            subindent = '    ' * (level + 1)
+            for file in files:
+                structure.append(f"{subindent}{file}")
+    return "\n".join(structure)
 
-# Funktion zum Zusammenführen aller Python-Dateien
-def merge_files(src_dir, root_file, output_file):
-    if not os.path.exists(src_dir):
-        raise FileNotFoundError(f"Das Verzeichnis {src_dir} existiert nicht.")
-
-    if not os.path.exists(root_file):
-        raise FileNotFoundError(f"Die Datei {root_file} existiert nicht.")
+def merge_python_files():
+    base_dirs = ["src", "assets", "data", "theme"]
+    target_file = "temp/merged.py"
+    main_file = "main.py"
 
     # Sicherstellen, dass der Zielordner existiert
-    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    os.makedirs(os.path.dirname(target_file), exist_ok=True)
 
-    with open(output_file, "w", encoding="utf-8") as merged_file:
-        # Zuerst die Dateien aus dem src-Verzeichnis
-        for root, _, files in os.walk(src_dir):
+    # Ordnerstruktur generieren
+    folder_structure = get_folder_structure(base_dirs)
+
+    with open(target_file, "w", encoding="utf-8") as merged_file:
+        # Ordnerstruktur als Kommentar hinzufügen
+        merged_file.write("""# Ordnerstruktur:\n"""
+)
+        for line in folder_structure.split("\n"):
+            merged_file.write(f"# {line}\n")
+        merged_file.write("\n")
+
+        # main.py hinzufügen
+        if os.path.exists(main_file):
+            with open(main_file, "r", encoding="utf-8") as main:
+                merged_file.write(f"# Inhalt von {main_file}\n")
+                merged_file.write(main.read())
+                merged_file.write("\n\n")
+        else:
+            print(f"Warnung: {main_file} nicht gefunden!")
+
+        # Python-Dateien aus src hinzufügen
+        for root, _, files in os.walk("src"):
             for file in files:
                 if file.endswith(".py"):
                     file_path = os.path.join(root, file)
-                    with open(file_path, "r", encoding="utf-8") as f:
-                        merged_file.write(f"# Inhalt von {file_path}\n")
-                        merged_file.write(f.read())
+                    with open(file_path, "r", encoding="utf-8") as src_file:
+                        relative_path = os.path.relpath(file_path, "src")
+                        merged_file.write(f"# Inhalt von src/{relative_path}\n")
+                        merged_file.write(src_file.read())
                         merged_file.write("\n\n")
 
-        # Dann die main.py-Datei
-        with open(root_file, "r", encoding="utf-8") as main_file:
-            merged_file.write(f"# Inhalt von {root_file}\n")
-            merged_file.write(main_file.read())
-
-    print(f"Alle Dateien wurden erfolgreich nach {output_file} zusammengeführt.")
-
-# Skript ausführen
 if __name__ == "__main__":
-    merge_files(SRC_DIR, ROOT_FILE, OUTPUT_FILE)
+    merge_python_files()

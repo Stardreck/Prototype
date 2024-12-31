@@ -58,12 +58,11 @@ class MainView(View):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.is_visible = False
-                    return False
                 # Handle button clicks
                 if event.type == pygame_gui.UI_BUTTON_PRESSED:
                     if event.ui_element == self.start_button:
                         print("Reise beginnt!")
-                        return True
+                        self.is_visible = False
                     elif event.ui_element == self.settings_button:
                         print("Einstellungen öffnen")
                         self.view_manager.set_view("settings")
