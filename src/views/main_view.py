@@ -1,8 +1,9 @@
-import pygame, sys
+import pygame
 import pygame_gui
 from pygame import Surface
 
 from managers.view_manager import ViewManager
+
 from views.view import View
 
 
@@ -19,7 +20,6 @@ class MainView(View):
         button_width, button_height = 200, 50
         button_spacing = 20  # Abstand zwischen Buttons
         label_height = 100
-
 
         # Create GUI elements
         self.title_label = pygame_gui.elements.UILabel(
@@ -54,7 +54,6 @@ class MainView(View):
 
         while self.is_visible:
             time_delta = self.clock.tick(60) / 1000.0
-
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.is_visible = False

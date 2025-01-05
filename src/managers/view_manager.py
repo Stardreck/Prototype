@@ -1,6 +1,7 @@
 from pygame import Surface
 from managers.manager import Manager
 
+
 class ViewManager(Manager):
     def __init__(self, screen: Surface):
         super().__init__()

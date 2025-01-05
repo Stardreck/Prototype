@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44f35ecb-0e0b-49b4-b425-492516d7b32a" name="Changes" comment="view manager testing&#10;theme GUI system implemented">
-      <change afterPath="$PROJECT_DIR$/src/scenes/scene.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scenes/story_scene.py" afterDir="false" />
+    <list default="true" id="44f35ecb-0e0b-49b4-b425-492516d7b32a" name="Changes" comment="zwischencommit">
+      <change afterPath="$PROJECT_DIR$/board_game_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/managers/debug_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/players/player.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/merge.py" beforeDir="false" afterPath="$PROJECT_DIR$/merge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/games/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/games/story_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/story_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/managers/view_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/managers/view_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/star_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/star_config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/star_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/star_engine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/main_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/main_view.py" afterDir="false" />
     </list>
@@ -60,6 +66,7 @@
     "Python.app_with_kv.executor": "Run",
     "Python.asyncimage.executor": "Run",
     "Python.asyncio_advanced.executor": "Run",
+    "Python.board_game_test.executor": "Run",
     "Python.boxlayout_poshint.executor": "Run",
     "Python.cable.executor": "Run",
     "Python.cable2.executor": "Run",
@@ -72,11 +79,12 @@
     "Python.glet.executor": "Run",
     "Python.image_mipmap.executor": "Run",
     "Python.kivy_snake.executor": "Run",
-    "Python.main.executor": "Debug",
+    "Python.main.executor": "Run",
     "Python.merge.executor": "Run",
     "Python.merged.executor": "Run",
     "Python.pong.executor": "Run",
     "Python.pygame_gui.executor": "Run",
+    "Python.pygame_gui_button_testing.executor": "Run",
     "Python.pygame_gui_menu_test01.executor": "Run",
     "Python.pygame_gui_testing.executor": "Run",
     "Python.pygame_menu.executor": "Run",
@@ -85,7 +93,9 @@
     "Python.pyvidplayer.executor": "Run",
     "Python.quiz_scene.executor": "Run",
     "Python.run.executor": "Run",
+    "Python.story_game.executor": "Run",
     "Python.story_scene.executor": "Run",
+    "Python.temp.executor": "Run",
     "Python.test.executor": "Run",
     "Python.test2.executor": "Run",
     "Python.testing.executor": "Run",
@@ -114,7 +124,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "ml.llm.AIAssistantPromptsLibrary",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -171,7 +181,10 @@
       <workItem from="1735401235696" duration="5608000" />
       <workItem from="1735465530379" duration="12985000" />
       <workItem from="1735552460481" duration="5051000" />
-      <workItem from="1735640896672" duration="319000" />
+      <workItem from="1735640896672" duration="434000" />
+      <workItem from="1735896981047" duration="17000" />
+      <workItem from="1735897007274" duration="23867000" />
+      <workItem from="1735983238079" duration="13147000" />
     </task>
     <task id="LOCAL-00001" summary="testing game loop, video playback">
       <option name="closed" value="true" />
@@ -213,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735489640095</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="zwischencommit">
+      <option name="closed" value="true" />
+      <created>1735641315062</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1735641315062</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +256,8 @@
     <MESSAGE value="project structure changed&#10;kivy, pyglet testing&#10;pygame init" />
     <MESSAGE value="videoplayer testing" />
     <MESSAGE value="view manager testing&#10;theme GUI system implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="view manager testing&#10;theme GUI system implemented" />
+    <MESSAGE value="zwischencommit" />
+    <option name="LAST_COMMIT_MESSAGE" value="zwischencommit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -248,8 +270,13 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Prototype$test.coverage" NAME="test Coverage Results" MODIFIED="1733581978282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Prototype$temp.coverage" NAME="temp Coverage Results" MODIFIED="1735927340517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Prototype$effectwidget.coverage" NAME="effectwidget Coverage Results" MODIFIED="1735303936997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
     <SUITE FILE_PATH="coverage/Prototype$story_scene.coverage" NAME="story_scene Coverage Results" MODIFIED="1733587792329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proto-01/scenes" />
     <SUITE FILE_PATH="coverage/Prototype$asyncio_advanced.coverage" NAME="asyncio_advanced Coverage Results" MODIFIED="1735303866053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/async" />
@@ -261,10 +288,12 @@
     <SUITE FILE_PATH="coverage/Prototype$pygame_gui.coverage" NAME="pygame_gui Coverage Results" MODIFIED="1735375874340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$video_kivy.coverage" NAME="video_kivy Coverage Results" MODIFIED="1735305789972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$cable2.coverage" NAME="cable2 Coverage Results" MODIFIED="1733649025966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
-    <SUITE FILE_PATH="coverage/Prototype$video_pyglet_vlc.coverage" NAME="video_pyglet_vlc Coverage Results" MODIFIED="1735300524367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$image_mipmap.coverage" NAME="image_mipmap Coverage Results" MODIFIED="1735303989549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
+    <SUITE FILE_PATH="coverage/Prototype$video_pyglet_vlc.coverage" NAME="video_pyglet_vlc Coverage Results" MODIFIED="1735300524367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/Prototype$pygame_gui_button_testing.coverage" NAME="pygame_gui_button_testing Coverage Results" MODIFIED="1735903829274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Prototype$board_game_test.coverage" NAME="board_game_test Coverage Results" MODIFIED="1735922846184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Prototype$pygame_menu.coverage" NAME="pygame_menu Coverage Results" MODIFIED="1735490332525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/_old-prototypes" />
-    <SUITE FILE_PATH="coverage/Prototype$merge.coverage" NAME="merge Coverage Results" MODIFIED="1735490923180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Prototype$merge.coverage" NAME="merge Coverage Results" MODIFIED="1735989220212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Prototype$video_player_testing.coverage" NAME="video_player_testing Coverage Results" MODIFIED="1735298263343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$text_testing.coverage" NAME="text_testing Coverage Results" MODIFIED="1735300291939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$effectwidget2.coverage" NAME="effectwidget2 Coverage Results" MODIFIED="1735303958996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
@@ -275,16 +304,17 @@
     <SUITE FILE_PATH="coverage/Prototype$app_with_kv.coverage" NAME="app_with_kv Coverage Results" MODIFIED="1735303834802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/application" />
     <SUITE FILE_PATH="coverage/Prototype$tower_defence.coverage" NAME="tower_defence Coverage Results" MODIFIED="1735640984321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/_old-prototypes/tower_defence-master" />
     <SUITE FILE_PATH="coverage/Prototype$merged.coverage" NAME="merged Coverage Results" MODIFIED="1735467381427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Prototype$main.coverage" NAME="main Coverage Results" MODIFIED="1735553900384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Prototype$main.coverage" NAME="main Coverage Results" MODIFIED="1736010219052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatgpt-test" />
     <SUITE FILE_PATH="coverage/Prototype$video_tkinter_vlc.coverage" NAME="video_tkinter_vlc Coverage Results" MODIFIED="1735300563493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/Prototype$run.coverage" NAME="run Coverage Results" MODIFIED="1735292590558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/pyglet_projects-master/projects/snake_basic" />
     <SUITE FILE_PATH="coverage/Prototype$cable.coverage" NAME="cable Coverage Results" MODIFIED="1733599661294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/Prototype$story_game.coverage" NAME="story_game Coverage Results" MODIFIED="1735987584501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/games" />
     <SUITE FILE_PATH="coverage/Prototype$quiz_scene.coverage" NAME="quiz_scene Coverage Results" MODIFIED="1733588510559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proto-01/scenes" />
     <SUITE FILE_PATH="coverage/Prototype$pygame_gui_menu_test01.coverage" NAME="pygame_gui_menu_test01 Coverage Results" MODIFIED="1735467223219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Prototype$asyncimage.coverage" NAME="asyncimage Coverage Results" MODIFIED="1735303926249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
     <SUITE FILE_PATH="coverage/Prototype$pong.coverage" NAME="pong Coverage Results" MODIFIED="1735381223739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/_old-prototypes" />
     <SUITE FILE_PATH="coverage/Prototype$testing_kivy.coverage" NAME="testing_kivy Coverage Results" MODIFIED="1735305946892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
-    <SUITE FILE_PATH="coverage/Prototype$Stardreck.coverage" NAME="Stardreck Coverage Results" MODIFIED="1735640899153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Prototype$Stardreck.coverage" NAME="Stardreck Coverage Results" MODIFIED="1736010384679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Prototype$videoplayer.coverage" NAME="videoplayer Coverage Results" MODIFIED="1735303999330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp/examples/widgets" />
     <SUITE FILE_PATH="coverage/Prototype$pygame_gui_testing.coverage" NAME="pygame_gui_testing Coverage Results" MODIFIED="1735381863001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Prototype$testing.coverage" NAME="testing Coverage Results" MODIFIED="1735130985972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

@@ -1,8 +1,12 @@
-import os
+# enable type annotations
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:  # Only imports the below statements during type checking
+    from games.game import Game
+
 import sys
-
 import pygame
-
 from managers.view_manager import ViewManager
 from src.star_config import StarConfig
 from views.intro_view import IntroView
@@ -11,19 +15,21 @@ from views.settings_view import SettingsView
 
 
 class StarEngine:
+    font: pygame.font.Font | None = None
+
     def __init__(self):
-        self.config: StarConfig | None = None
+        self.config: StarConfig | None = StarConfig("Star Temp")
 
         # Initialize Pygame
         pygame.init()
-
+        # Clock for controlling the frame rate
+        self.clock = pygame.time.Clock()
+        # font settings
+        StarEngine.font = pygame.font.SysFont(None, 32)
         # Screen setup
         self.screen_size = (1600, 720)
         self.screen = pygame.display.set_mode(self.screen_size)
-        pygame.display.set_caption("Star Engine - Pygame")
-
-        # Clock for controlling the frame rate
-        self.clock = pygame.time.Clock()
+        pygame.display.set_caption(self.config.title)
 
         # init view manager
         self.view_manager = ViewManager(self.screen)
@@ -58,11 +64,11 @@ class StarEngine:
         """
         Renders the game content onto the screen. Called whenever the screen needs to be redrawn.
         """
-        # Clear the screen with a color (e.g., black)
+        # Clear the screen with a color (black)
         self.screen.fill((0, 0, 0))
 
         # TODO: Add drawing code here
-        # Example: Draw a simple rectangle
+        # Example: a simple rectangle
         pygame.draw.rect(self.screen, (0, 255, 0), (100, 100, 200, 150))
 
         # Update the display
@@ -77,7 +83,7 @@ class StarEngine:
         """
         print(f"Key pressed: {event.key}")
 
-        # Example: Quit the game on pressing ESC
+        # ESCAPE Key
         if event.key == pygame.K_ESCAPE:
             self.is_running = False
 
@@ -89,19 +95,30 @@ class StarEngine:
         self.view_manager.set_view("main")
         self.view_manager.render()
 
-
     def kill(self):
         pygame.quit()
         sys.exit()
 
-    def run(self):
+    def run(self, game: Game):
 
         # play the game intro video
         # self.play_intro()
         # display the game main menu, contains own event loop
-        if not self.show_main_menu():
-            print("todo if not show main menu")
-            # elf.kill()
+        self.show_main_menu()
+        if not self.is_running:
+            self.kill()
+        # elf.kill()
+
+        # main game loop
+        while self.is_running and game.is_running:
+            self.clock.tick(self.config.fps)
+            game.handle_events()
+            game.update()
+            game.draw()
+            pygame.display.flip()
+
+        # quit application
+        self.kill()
 
         # main game loop
         # while self.is_running:
