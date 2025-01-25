@@ -1,15 +1,14 @@
-import random
-from abc import ABC
 from typing import Dict, List
 
 import pygame
 
 from enums.color import Color
 from games.game import Game
-from games.story.game_data import GameData
+from games.game_data import GameData
 from managers.debug_manager import DebugManager
 from managers.event_manager import EventManager
 from managers.input_manager import InputManager
+from managers.quiz_manager import QuizManager
 from managers.ui_manager import UIManager
 from star_engine import StarEngine
 
@@ -21,17 +20,19 @@ class StoryGame(Game):
         self.screen = engine.screen
 
         ##### Debug Manager #####
-        self.debug_manager = DebugManager()
+        self.debug_manager: DebugManager = DebugManager()
 
         ##### Event Manager #####
-        self.event_manager = EventManager(data.event_cards, data.event_probability)
+        self.event_manager: EventManager = EventManager(self, data.event_cards, data.event_probability)
 
         ##### Input Manager #####
-        self.input_manager = InputManager(self)
+        self.input_manager: InputManager = InputManager(self)
 
         ##### UI Manager #####
-        self.ui_manager = UIManager(self)
+        self.ui_manager: UIManager = UIManager(self)
 
+        ##### Quiz Manager #####
+        self.quiz_manager: QuizManager = QuizManager(self)
 
         ##### Game Data #####
         self.data = data
@@ -113,8 +114,6 @@ class StoryGame(Game):
                 self.screen.blit(self.default_bg_full, (0, 0))
             self.ui_manager.draw_hud(self.screen)
 
-
-
     def handle_movement(self, event: pygame.event.Event):
         move_row, move_column = 0, 0
         if event.key == pygame.K_UP:
@@ -155,9 +154,9 @@ class StoryGame(Game):
 
         ##### quizzes #####
         if not found_planet:
-            quiz_data = self.get_random_quiz_for_planet("default")
+            quiz_data = self.quiz_manager.get_random_quiz_for_planet("default")
             if quiz_data:
-                self.run_quiz_scene(quiz_data)
+                self.quiz_manager.run_quiz_scene(quiz_data)
 
     def trigger_planet_event(self, planet):
         if planet.name in self.data.story_segments:
@@ -165,14 +164,13 @@ class StoryGame(Game):
                 self.ui_manager.display_text_blocking(line)
 
         # Planetenspezifisches Quiz
-        quiz_data = self.get_random_quiz_for_planet(planet.name)
+        quiz_data = self.quiz_manager.get_random_quiz_for_planet(planet.name)
         if quiz_data:
-            self.run_quiz_scene(quiz_data)
+            self.quiz_manager.run_quiz_scene(quiz_data)
 
         if planet.is_fuel_planet:
             self.fuel += 5
             self.ui_manager.display_text_blocking("Ihr habt +5 Fuel gefunden!")
-
 
     def trigger_random_event(self):
         card = self.event_manager.pick_event()
@@ -180,7 +178,7 @@ class StoryGame(Game):
             return
         self.event_manager.apply_event_scaling(card)
         # => Animiertes Darstellen
-        self.ui_manager.display_event_card_animated(card)
+        self.event_manager.display_event_card_animated(card)
 
         self.fuel += card.fuel_change
         self.hull += card.hull_change
@@ -188,29 +186,8 @@ class StoryGame(Game):
             self.game_over("Hull <= 0. Zerstört!")
 
     ###########################################################################
-    # QUIZ
+    # todo methods not tested
     ###########################################################################
-    def get_random_quiz_for_planet(self, planet_name):
-        if planet_name not in self.planet_quizzes_current:
-            return None
-        qlist = self.planet_quizzes_current[planet_name]
-        if not qlist:
-            # Neu laden
-            self.planet_quizzes_current[planet_name] = list(self.data.planet_quizzes[planet_name])
-            qlist = self.planet_quizzes_current[planet_name]
-        if not qlist:
-            return None
-
-        idx = random.randrange(len(qlist))
-        return qlist.pop(idx)
-
-    def run_quiz_scene(self, quiz_data):
-        q_type = quiz_data.get("type", "quiz")
-        if q_type == "quiz":
-            self.run_quiz_multiple_choice(quiz_data)
-        else:
-            self.run_quiz_task(quiz_data)
-
     def run_quiz_multiple_choice(self, quiz_data):
         question = quiz_data["question"]
         options = quiz_data["options"]
@@ -264,7 +241,7 @@ class StoryGame(Game):
             for i, opt in enumerate(options):
                 lines.append(f"{i}) {opt}")
             lines.append("")
-            lines.append(f"Antwort eingeben (0-{len(options)-1}): {typed_input}")
+            lines.append(f"Antwort eingeben (0-{len(options) - 1}): {typed_input}")
 
             y_off = 10
             for line in lines:
