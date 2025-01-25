@@ -162,3 +162,6 @@ cython_debug/
 #.idea/
 /02 prototype_kivy/assets/test_video01.mp4
 /temp/
+/chatgpt-test/
+/prototype-02/
+/chatgpt-test/
