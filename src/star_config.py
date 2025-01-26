@@ -13,6 +13,7 @@ class StarConfig:
         self.title: str = self._data.get("title", "")
         self.main_menu_background_image: str = self._data.get("main_menu", {}).get("background_image", "")
         self.main_menu_start_button_text: str = self._data.get("main_menu", {}).get("start_button_text", "")
+        self.event_probability: float = self._data.get("event_system", {}).get("event_probability", 0)
 
     def __load_config(self, config_path: str) -> dict[str, Any]:
         """
@@ -40,3 +41,5 @@ class StarConfig:
             raise ValueError(f"main_menu_background_image image not found: {self.main_menu_background_image}")
         if not isinstance(self.main_menu_start_button_text, str) or len(self.main_menu_start_button_text) <= 0:
             raise ValueError("Invalid main_menu_background_image in configuration")
+        if not isinstance(self.event_probability, float) or self.event_probability == 0:
+            raise ValueError("Invalid event_probability in configuration")

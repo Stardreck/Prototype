@@ -28,6 +28,14 @@ def main():
         engine.run(game)
 
 
+def debug():
+    config = StarConfig("data/star_config.json")
+    engine = StarEngine(config)
+    data = GameData(config)
+    game = StoryGame(engine, data)
+    engine.run(game)
+
+
 # entry point
 if __name__ == "__main__":
-    main()
+    debug()

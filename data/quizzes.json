@@ -1,0 +1,54 @@
+{
+    "TerraNova": [
+        {
+            "type": "quiz",
+            "question": "TerraNova-spezifische Frage 1?",
+            "options": ["A", "B", "C", "D"],
+            "correct_idx": 0
+        },
+        {
+            "type": "task",
+            "question": "Wie groß ist die Gravitation auf TerraNova? (m/s^2)",
+            "correct_value": 9.81
+        }
+    ],
+    "Mars": [
+        {
+            "type": "quiz",
+            "question": "Mars-spezifische Frage 1?",
+            "options": ["Eis", "Sand", "Lava", "Gras"],
+            "correct_idx": 1
+        },
+        {
+            "type": "task",
+            "question": "Mars Gravitation? (m/s^2)",
+            "correct_value": 3.711
+        }
+    ],
+    "Jupiter": [
+        {
+            "type": "quiz",
+            "question": "Wie viele Monde hat Jupiter?",
+            "options": ["53", "79", "67", "82"],
+            "correct_idx": 2
+        },
+        {
+            "type": "task",
+            "question": "Durchmesser von Jupiter? (km)",
+            "correct_value": 139820
+        }
+    ],
+    "default": [
+        {
+            "type": "quiz",
+            "question": "Leeres Feld: Frage 1?",
+            "options": ["Antwort1", "Antwort2", "Antwort3", "Antwort4"],
+            "correct_idx": 1
+        },
+        {
+            "type": "task",
+            "question": "Wie groß ist die Fluchtgeschwindigkeit? (m/s)",
+            "correct_value": 11186
+        }
+    ]
+}

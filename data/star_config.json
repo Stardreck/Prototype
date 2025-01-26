@@ -5,5 +5,8 @@
   "main_menu": {
     "background_image": "assets/welcome_screen.png",
     "start_button_text": "Reise beginnen"
+  },
+  "event_system": {
+    "event_probability": 0.3
   }
 }

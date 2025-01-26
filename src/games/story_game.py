@@ -21,9 +21,6 @@ class StoryGame(Game):
         ##### Debug Manager #####
         self.debug_manager: DebugManager = DebugManager()
 
-        ##### Event Manager #####
-        self.event_manager: EventManager = EventManager(self, data.event_cards, data.event_probability)
-
         ##### Input Manager #####
         self.input_manager: InputManager = InputManager(self)
 
@@ -32,6 +29,10 @@ class StoryGame(Game):
 
         ##### Quiz Manager #####
         self.quiz_manager: QuizManager = QuizManager(self)
+
+        ##### Event Manager #####
+        self.event_manager: EventManager = EventManager(self, data.event_cards, data.event_probability)
+
 
         ##### Game Data #####
         self.data = data
@@ -148,7 +149,7 @@ class StoryGame(Game):
 
         ##### events #####
         if self.event_manager.should_trigger_event():
-            self.trigger_random_event()
+            self.event_manager.trigger_random_event()
 
         ##### quizzes #####
         if not found_planet:
@@ -169,19 +170,6 @@ class StoryGame(Game):
         if planet.is_fuel_planet:
             self.fuel += 5
             self.ui_manager.display_text_blocking("Ihr habt +5 Fuel gefunden!")
-
-    def trigger_random_event(self):
-        card = self.event_manager.pick_event()
-        if not card:
-            return
-        self.event_manager.apply_event_scaling(card)
-        # => Animiertes Darstellen
-        self.event_manager.display_event_card_animated(card)
-
-        self.fuel += card.fuel_change
-        self.hull += card.hull_change
-        if self.hull <= 0:
-            self.game_over("Hull <= 0. Zerstört!")
 
     def game_over(self, reason: str):
         print("GAME OVER:", reason)

@@ -5,6 +5,7 @@ import pygame
 
 from typing import List, TYPE_CHECKING
 from enums.color import Color
+from managers.event_selection_manager import EventSelectionManager
 from models.event_card import EventCard
 
 if TYPE_CHECKING:
@@ -16,43 +17,55 @@ class EventManager:
         self.game = game
         self.negative_events: List[EventCard] = [card for card in event_cards if card.type == "negative"]
         self.positive_events: List[EventCard] = [card for card in event_cards if card.type == "positive"]
+        self.ui_manager = self.game.ui_manager
         self.error_count: int = 0
         self.max_error: int = 5
         self.event_probability: float = base_probability
+
+        self.selection_manager = EventSelectionManager(self.game, self.negative_events, self.positive_events, base_probability, self.max_error)
 
         ##### load event card backgrounds #####
         self.event_card_surfaces = {}
         self.__load_event_assets()
 
-
-
     def increase_error_count(self):
+        """Increase the error count, up to the maximum limit."""
         if self.error_count < self.max_error:
             self.error_count += 1
+        self.selection_manager.set_error_count(self.error_count)
 
     def decrease_error_count(self):
+        """Decrease the error count, down to zero."""
         if self.error_count > 0:
             self.error_count -= 1
+        self.selection_manager.set_error_count(self.error_count)
 
-    def should_trigger_event(self):
-        return random.random() < self.event_probability
+    def trigger_random_event(self):
+        """
+        Check if an event should be triggered and handle it.
+        """
+        card = self.selection_manager.pick_event()
+        if card:
+            self.selection_manager.apply_event_scaling(card)
+            self.display_event_card_animated(card)
+            self.apply_event_effects(card)
 
-    def pick_event(self):
-        neg_chance = 0.3 + (0.6 * (self.error_count / self.max_error))  # [0.3..0.9]
-        if random.random() < neg_chance and self.negative_events:
-            return random.choice(self.negative_events)
-        else:
-            if self.positive_events:
-                return random.choice(self.positive_events)
-            return None
+    def should_trigger_event(self) -> bool:
+        """Determine if an event should be triggered."""
+        return self.selection_manager.should_trigger_event()
 
-    def apply_event_scaling(self, card: EventCard):
-        if card.type == "negative":
-            scale = 1.0 + (self.error_count * 0.5)
-            if card.hull_change < 0:
-                card.hull_change = int(card.hull_change * scale)
-            if card.fuel_change < 0:
-                card.fuel_change = int(card.fuel_change * scale)
+
+    def apply_event_effects(self, event_card: EventCard) -> None:
+        """
+        Apply the effects of the event to the game state.
+
+        :param event_card: The EventCard whose effects to apply.
+        """
+        event_card.apply_effect(self.game)
+
+        # Check for game over condition
+        if self.game.hull <= 0:
+            self.game.game_over("Hull <= 0. Ship destroyed!")
 
     def display_event_card_animated(self, card: EventCard) -> None:
         """
@@ -152,6 +165,10 @@ class EventManager:
             # If animation is done and user hasn't clicked, wait for click
             if not anim_running:
                 continue
+
+    def __calculate_event_probability(self) -> float:
+        """Calculate the probability of triggering an event based on error count."""
+        return self.event_probability + (0.05 * self.error_count)
 
     def __get_card_surface(self, card_name: str) -> pygame.Surface | None:
         return self.event_card_surfaces.get(card_name, None)
