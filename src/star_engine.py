@@ -53,9 +53,7 @@ class StarEngine:
         self.menu_font = pygame.font.SysFont(None, 36)
 
         # Load background image
-        #bg_path = self.src_dir.joinpath("assets", "welcome_screen.png")
-        #self.background_image = pygame.image.load(str(bg_path))
-        self.background_image =  pygame.image.load(str(self.config.main_menu_background_image))
+        self.background_image = pygame.image.load(str(self.config.main_menu_background_image))
 
     def show_main_menu(self) -> str:
         """
@@ -72,7 +70,8 @@ class StarEngine:
                 return result
             self._render_main_menu(button_x, button_y, button_width, button_height)
 
-    def _process_menu_events(self, button_x: int, button_y: int, button_width: int, button_height: int) -> Optional[str]:
+    def _process_menu_events(self, button_x: int, button_y: int, button_width: int, button_height: int) -> Optional[
+        str]:
         """
         Handle events for the main menu.
         :return: "quit" or "storygame" if a button is clicked.
@@ -106,7 +105,8 @@ class StarEngine:
 
         pygame.display.flip()
 
-    def _is_mouse_over_button(self, mouse_pos: tuple[int, int], button_x: int, button_y: int, button_width: int, button_height: int) -> bool:
+    def _is_mouse_over_button(self, mouse_pos: tuple[int, int], button_x: int, button_y: int, button_width: int,
+                              button_height: int) -> bool:
         """
         Check if the mouse is over the button.
         :param mouse_pos: Current mouse position.
@@ -128,12 +128,14 @@ class StarEngine:
         :param button_height: Height of the button.
         """
         mx, my = pygame.mouse.get_pos()
-        button_color = Color.BUTTON_HOVER.value if self._is_mouse_over_button((mx, my), button_x, button_y, button_width, button_height) else Color.BUTTON_BG.value
+        button_color = Color.BUTTON_HOVER.value if self._is_mouse_over_button((mx, my), button_x, button_y,
+                                                                              button_width,
+                                                                              button_height) else Color.BUTTON_BG.value
 
         pygame.draw.rect(self.screen, button_color, (button_x, button_y, button_width, button_height))
 
         # Draw button text
-        text_surface = self.menu_font.render("Reise beginnen", True, Color.WHITE.value)
+        text_surface = self.menu_font.render(self.config.main_menu_start_button_text, True, Color.WHITE.value)
         text_rect = text_surface.get_rect(center=(button_x + button_width // 2, button_y + button_height // 2))
         self.screen.blit(text_surface, text_rect)
 

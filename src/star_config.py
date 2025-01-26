@@ -12,6 +12,7 @@ class StarConfig:
         self.fps: int = self._data.get("fps", 60)
         self.title: str = self._data.get("title", "")
         self.main_menu_background_image: str = self._data.get("main_menu", {}).get("background_image", "")
+        self.main_menu_start_button_text: str = self._data.get("main_menu", {}).get("start_button_text", "")
 
     def __load_config(self, config_path: str) -> dict[str, Any]:
         """
@@ -37,3 +38,5 @@ class StarConfig:
             raise ValueError("Invalid title in configuration")
         if not Path(self.main_menu_background_image).is_file():
             raise ValueError(f"main_menu_background_image image not found: {self.main_menu_background_image}")
+        if not isinstance(self.main_menu_start_button_text, str) or len(self.main_menu_start_button_text) <= 0:
+            raise ValueError("Invalid main_menu_background_image in configuration")

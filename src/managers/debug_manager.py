@@ -1,7 +1,12 @@
+from __future__ import annotations
 import math
 import pygame
-
+from typing import TYPE_CHECKING
 from enums.color import Color
+
+if TYPE_CHECKING:
+    from games.story_game import StoryGame
+
 
 
 class DebugManager:
@@ -26,7 +31,7 @@ class DebugManager:
             self.bg_solar_system = pygame.Surface((500, 500))
             self.bg_solar_system.fill((0, 0, 0))
 
-    def draw_debug(self, surface: pygame.Surface, game: "StoryGame"):
+    def draw_debug(self, surface: pygame.Surface, game: StoryGame):
         if not self.debug_mode:
             surface.fill(Color.DEBUG_BG.value)
             return

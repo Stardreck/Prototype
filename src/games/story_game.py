@@ -12,7 +12,6 @@ from managers.quiz_manager import QuizManager
 from managers.ui_manager import UIManager
 from star_engine import StarEngine
 
-
 class StoryGame(Game):
     def __init__(self, engine: StarEngine, data: GameData):
         super().__init__()
@@ -42,7 +41,6 @@ class StoryGame(Game):
         self.player_row: int = 1
         self.player_col: int = 5
         self.current_planet = None
-
         self.planet_quizzes_current: Dict[str, List[dict]] = {
             pname: list(q_list) for pname, q_list in self.data.planet_quizzes.items()
         }
@@ -185,142 +183,6 @@ class StoryGame(Game):
         if self.hull <= 0:
             self.game_over("Hull <= 0. Zerstört!")
 
-    ###########################################################################
-    # todo methods not tested
-    ###########################################################################
-    def run_quiz_multiple_choice(self, quiz_data):
-        question = quiz_data["question"]
-        options = quiz_data["options"]
-        correct_idx = quiz_data["correct_idx"]
-
-        typed_input = ""
-        font = pygame.font.SysFont(None, 24)
-        waiting = True
-
-        while waiting and self.is_running:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    self.stop()
-                    return
-                elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_ESCAPE:
-                        self.stop()
-                        return
-                    elif event.key == pygame.K_d:
-                        self.debug_manager.toggle_debug_mode()
-                    elif event.key == pygame.K_RETURN:
-                        if typed_input.isdigit():
-                            if int(typed_input) == correct_idx:
-                                self.ui_manager.display_text_blocking("Richtig beantwortet!")
-                                self.event_manager.decrease_error_count()
-                            else:
-                                self.ui_manager.display_text_blocking("Falsch! Hull -1.")
-                                self.hull -= 1
-                                self.event_manager.increase_error_count()
-                                if self.hull <= 0:
-                                    self.game_over("Euer Schiff ist zerstört!")
-                            waiting = False
-                            return
-                    elif event.key == pygame.K_BACKSPACE:
-                        typed_input = typed_input[:-1]
-                    elif event.key in range(pygame.K_0, pygame.K_9 + 1):
-                        typed_input += str(event.key - pygame.K_0)
-
-            self.draw()
-
-            target_surf = self.screen.subsurface(self.game_rect) if self.debug_manager.debug_mode else self.screen
-            ow_w = target_surf.get_width()
-            ow_h = 250
-
-            overlay_rect = pygame.Rect(0, target_surf.get_height() - ow_h, ow_w, ow_h)
-            quiz_overlay = pygame.Surface((ow_w, ow_h))
-            quiz_overlay.set_alpha(180)
-            quiz_overlay.fill(Color.BLACK.value)
-
-            lines = [f"QUIZ: {question}"]
-            for i, opt in enumerate(options):
-                lines.append(f"{i}) {opt}")
-            lines.append("")
-            lines.append(f"Antwort eingeben (0-{len(options) - 1}): {typed_input}")
-
-            y_off = 10
-            for line in lines:
-                line_img = font.render(line, True, Color.WHITE.value)
-                quiz_overlay.blit(line_img, (10, y_off))
-                y_off += line_img.get_height() + 5
-
-            target_surf.blit(quiz_overlay, (overlay_rect.x, overlay_rect.y))
-            pygame.display.flip()
-
-    def run_quiz_task(self, quiz_data):
-        question = quiz_data["question"]
-        correct_value = quiz_data["correct_value"]
-
-        typed_input = ""
-        font = pygame.font.SysFont(None, 24)
-        waiting = True
-
-        while waiting and self.is_running:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    self.stop()
-                    return
-                elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_ESCAPE:
-                        self.stop()
-                        return
-                    elif event.key == pygame.K_d:
-                        self.debug_manager.toggle_debug_mode()
-                    elif event.key == pygame.K_RETURN:
-                        try:
-                            user_val = float(typed_input)
-                            tolerance = abs(correct_value * 0.01)
-                            if abs(user_val - correct_value) <= tolerance:
-                                self.ui_manager.display_text_blocking("Richtig beantwortet!")
-                                self.event_manager.decrease_error_count()
-                            else:
-                                self.ui_manager.display_text_blocking("Falsch! Hull -1.")
-                                self.hull -= 1
-                                self.event_manager.increase_error_count()
-                                if self.hull <= 0:
-                                    self.game_over("Euer Schiff ist zerstört!")
-                            waiting = False
-                            return
-                        except ValueError:
-                            pass
-                    elif event.key == pygame.K_BACKSPACE:
-                        typed_input = typed_input[:-1]
-                    elif (event.key >= pygame.K_0 and event.key <= pygame.K_9) or event.key == pygame.K_PERIOD:
-                        char = "." if event.key == pygame.K_PERIOD else str(event.key - pygame.K_0)
-                        typed_input += char
-
-            self.draw()
-
-            target_surf = self.screen.subsurface(self.game_rect) if self.debug_manager.debug_mode else self.screen
-            ow_w = target_surf.get_width()
-            ow_h = 250
-
-            overlay_rect = pygame.Rect(0, target_surf.get_height() - ow_h, ow_w, ow_h)
-            quiz_overlay = pygame.Surface((ow_w, ow_h))
-            quiz_overlay.set_alpha(180)
-            quiz_overlay.fill(Color.BLACK.value)
-
-            lines = [f"AUFGABE: {question}"]
-            lines.append("")
-            lines.append(f"Zahl eingeben: {typed_input}")
-
-            y_off = 10
-            for line in lines:
-                line_img = font.render(line, True, Color.WHITE.value)
-                quiz_overlay.blit(line_img, (10, y_off))
-                y_off += line_img.get_height() + 5
-
-            target_surf.blit(quiz_overlay, (overlay_rect.x, overlay_rect.y))
-            pygame.display.flip()
-
-    ###########################################################################
-    # HELPER METHODS
-    ###########################################################################
     def game_over(self, reason: str):
         print("GAME OVER:", reason)
         self.ui_manager.display_text_blocking(f"GAME OVER: {reason}")

@@ -9,7 +9,6 @@ from enums.color import Color
 if TYPE_CHECKING:
     from games.story_game import StoryGame
 
-
 class QuizManager:
     """
     Manages quizzes and tasks within the StoryGame.
@@ -101,7 +100,8 @@ class QuizManager:
                     elif self._is_valid_input(event.key, is_task):
                         user_input += self._map_key_to_char(event.key)
 
-            self._render_quiz_overlay(question, user_input, answer_data if not is_task else None)
+            if waiting:
+                self._render_quiz_overlay(question, user_input, answer_data if not is_task else None)
 
     def _process_user_input(self, user_input: str,
                             answer_data,
@@ -124,10 +124,10 @@ class QuizManager:
                 is_correct = int(user_input) == correct_idx
 
             if is_correct:
-                self.game.ui_manager.display_text_blocking("Correct answer!")
+                self._display_feedback("Correct answer!")
                 self.game.event_manager.decrease_error_count()
             else:
-                self.game.ui_manager.display_text_blocking("Wrong answer! Hull -1.")
+                self._display_feedback("Wrong answer! Hull -1.")
                 self.game.hull -= 1
                 self.game.event_manager.increase_error_count()
                 if self.game.hull <= 0:
@@ -190,3 +190,28 @@ class QuizManager:
 
         target_surface.blit(quiz_overlay, (overlay_rect.x, overlay_rect.y))
         pygame.display.flip()
+
+    def _display_feedback(self, message: str, duration: int = 1000) -> None:
+        """
+        Display feedback (e.g., 'Correct answer!') for a set duration.
+        :param message: The feedback message to display.
+        :param duration: Duration in milliseconds to display the message.
+        """
+        feedback_surface = pygame.Surface(self.game.screen.get_size())
+        feedback_surface.set_alpha(180)
+        feedback_surface.fill(Color.BLACK.value)
+
+        font = pygame.font.SysFont(None, 48)
+        text_surface = font.render(message, True, Color.WHITE.value)
+        text_rect = text_surface.get_rect(center=(self.game.screen.get_width() // 2,
+                                                  self.game.screen.get_height() // 2))
+        feedback_surface.blit(text_surface, text_rect)
+
+        start_time = pygame.time.get_ticks()
+        while pygame.time.get_ticks() - start_time < duration:
+            self.game.screen.blit(feedback_surface, (0, 0))
+            pygame.display.flip()
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.game.stop()
+                    return

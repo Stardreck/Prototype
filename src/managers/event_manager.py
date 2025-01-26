@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import random
 import pygame
 
@@ -10,7 +12,7 @@ if TYPE_CHECKING:
 
 
 class EventManager:
-    def __init__(self, game: "StoryGame", event_cards: List[EventCard], base_probability: float = 0.3):
+    def __init__(self, game: StoryGame, event_cards: List[EventCard], base_probability: float = 0.3):
         self.game = game
         self.negative_events: List[EventCard] = [card for card in event_cards if card.type == "negative"]
         self.positive_events: List[EventCard] = [card for card in event_cards if card.type == "positive"]
@@ -22,8 +24,7 @@ class EventManager:
         self.event_card_surfaces = {}
         self.__load_event_assets()
 
-    def get_card_surface(self, card_name: str):
-        return self.event_card_surfaces.get(card_name, None)
+
 
     def increase_error_count(self):
         if self.error_count < self.max_error:
@@ -63,17 +64,17 @@ class EventManager:
         duration: int = 1000  # milliseconds
 
         # Load the event card surface
-        card_surf: pygame.Surface = self.get_card_surface(card.name)
-        if not card_surf:
+        card_surface: pygame.Surface = self.__get_card_surface(card.name)
+        if not card_surface:
             # Fallback if image not found
-            card_surf = pygame.Surface((200, 300))
-            card_surf.fill((150, 0, 150))
+            card_surface = pygame.Surface((200, 300))
+            card_surface.fill((150, 0, 150))
 
         # Scale the card surface
         target_w: int = 200
-        ratio: float = card_surf.get_width() / card_surf.get_height()
+        ratio: float = card_surface.get_width() / card_surface.get_height()
         target_h: int = int(target_w / ratio)
-        card_surf = pygame.transform.smoothscale(card_surf, (target_w, target_h))
+        card_surface = pygame.transform.smoothscale(card_surface, (target_w, target_h))
 
         # Determine center position
         target_surf: pygame.Surface = (
@@ -123,7 +124,7 @@ class EventManager:
             angle: float = 360.0 * frac
 
             # Rotate the card surface
-            rot_surf: pygame.Surface = pygame.transform.rotate(card_surf, angle)
+            rot_surf: pygame.Surface = pygame.transform.rotate(card_surface, angle)
             rw: int = rot_surf.get_width()
             rh: int = rot_surf.get_height()
 
@@ -151,6 +152,9 @@ class EventManager:
             # If animation is done and user hasn't clicked, wait for click
             if not anim_running:
                 continue
+
+    def __get_card_surface(self, card_name: str) -> pygame.Surface | None:
+        return self.event_card_surfaces.get(card_name, None)
 
     def __load_event_assets(self):
         """
