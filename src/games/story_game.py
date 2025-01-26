@@ -39,8 +39,8 @@ class StoryGame(Game):
         self.fuel: int = 50
         self.hull: int = 50
         # Starting location
-        self.player_row: int = 1
-        self.player_col: int = 5
+        self.player_row: int = 2
+        self.player_col: int = 2
         self.current_planet = None
         self.planet_quizzes_current: Dict[str, List[dict]] = {
             pname: list(q_list) for pname, q_list in self.data.planet_quizzes.items()
@@ -159,8 +159,26 @@ class StoryGame(Game):
 
     def trigger_planet_event(self, planet):
         if planet.name in self.data.story_segments:
-            for line in self.data.story_segments[planet.name].story_lines:
-                self.ui_manager.display_text_blocking(line)
+            ##### display planet options menu #####
+            prompt = f"Sie haben den Planeten {planet.name} erreicht. Was möchten Sie tun?"
+            options = ["Planet besuchen", "Im Orbit bleiben und zur Handelsstation gehen"]
+            choice = self.ui_manager.display_multiple_choice(prompt, options)
+            ##### choice overview #####
+            # 0 = visit planet
+            # 1 = stay in orbit (fuel station)
+            if choice == 0:
+
+                self.ui_manager.display_cutscene("assets/test_video02.mp4")
+
+                story = self.data.story_segments[planet.name]
+                for line in story.story_lines:
+                    self.ui_manager.display_text_blocking(line)
+
+            elif choice == 1:
+                pass
+
+
+
 
         # Planetenspezifisches Quiz
         quiz_data = self.quiz_manager.get_random_quiz_for_planet(planet.name)

@@ -8,7 +8,7 @@
         },
         {
             "type": "task",
-            "question": "Wie groß ist die Gravitation auf TerraNova? (m/s^2)",
+            "question": "Wie gross ist die Gravitation auf TerraNova? öäü (m/s^2)",
             "correct_value": 9.81
         }
     ],

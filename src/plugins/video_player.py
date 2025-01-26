@@ -11,6 +11,7 @@ class VideoPlayer:
     Plays a video file (MP4) including audio
     skips the video on a key pressed event
     """
+
     def __init__(self, screen: Surface | None):
         self.screen = screen
         self.video_path = None
@@ -28,15 +29,15 @@ class VideoPlayer:
         self.screen = pygame.display.set_mode((width, height))
         pygame.display.set_caption(title)
 
-
     def set_video(self, video_path: str):
         self.video_path = video_path
 
-    def __render(self, clip: VideoFileClip):
+    def __render(self, clip: VideoFileClip, has_audio: bool):
         frame_duration = 1 / clip.fps
         last_frame_time = pygame.time.get_ticks()
 
-        pygame.mixer.music.play()
+        if has_audio:
+            pygame.mixer.music.play()
 
         for frame in clip.iter_frames(fps=clip.fps, dtype="uint8", with_times=False):
             for event in pygame.event.get():
@@ -65,12 +66,31 @@ class VideoPlayer:
 
         clip = VideoFileClip(self.video_path)
 
-        # Audio extrahieren
-        clip.audio.write_audiofile(self.temp_audio_path, fps=44100)
-        pygame.mixer.init()
-        pygame.mixer.music.load(self.temp_audio_path)
+        # check if video contains audio
+        has_audio = clip.audio is not None
 
-        self.__render(clip)
+        if has_audio:
+            # extract the audio
+            try:
+                clip.audio.write_audiofile(self.temp_audio_path, fps=44100)
+                pygame.mixer.init()
+                pygame.mixer.music.load(self.temp_audio_path)
+            except Exception as e:
+                print(f"Fehler beim Laden der Audiodatei: {e}")
+                clip.close()
+                return
+
+        self.__render(clip, has_audio)
 
         clip.close()
-        pygame.mixer.music.stop()
+
+        if has_audio:
+            # stop the audio
+            pygame.mixer.music.stop()
+            # delete the temporary audio file
+            if os.path.exists(self.temp_audio_path):
+                try:
+                    os.remove(self.temp_audio_path)
+                except Exception as e:
+                    print(f"Fehler beim Entfernen der temporären Audiodatei: {e}")
+
