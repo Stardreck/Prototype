@@ -1,14 +1,26 @@
 {
-    "TerraNova": [
-        "Willkommen auf Terra Nova! Hier begann eure Reise.",
-        "Erkundet das System und findet wichtige Ressourcen."
-    ],
-    "Mars": [
-        "Der Mars: Sandstürme und versteckte Alien-Signale!",
-        "Vielleicht findet ihr Treibstoff in verlassenen Tanks."
-    ],
-    "Jupiter": [
-        "Jupiter: Der Riese unter den Planeten mit stürmischen Atmosphären.",
-        "Die Erforschung der Jupitermonde birgt viele Geheimnisse."
-    ]
+    "Jupiter": {
+        "title": "Jupiter Title",
+        "story_lines": [
+            "Jupiter: Der Riese unter den Planeten mit stürmischen Atmosphären.",
+            "Die Erforschung der Jupitermonde birgt viele Geheimnisse."
+        ],
+        "audio_clip": "assets/audio/jupiter_theme.mp3"
+    },
+    "Mars": {
+        "title": "Mars Title",
+        "story_lines": [
+            "Der Mars: Sandstürme und versteckte Alien-Signale!",
+            "Vielleicht findet ihr Treibstoff in verlassenen Tanks."
+        ],
+        "audio_clip": "assets/audio/mars_theme.mp3"
+    },
+    "TerraNova": {
+        "title": "TerraNova Title",
+        "story_lines": [
+            "Willkommen auf Terra Nova! Hier begann eure Reise.",
+            "Erkundet das System und findet wichtige Ressourcen."
+        ],
+        "audio_clip": "assets/audio/terra_nova_theme.mp3"
+    }
 }

@@ -159,7 +159,7 @@ class StoryGame(Game):
 
     def trigger_planet_event(self, planet):
         if planet.name in self.data.story_segments:
-            for line in self.data.story_segments[planet.name].lines:
+            for line in self.data.story_segments[planet.name].story_lines:
                 self.ui_manager.display_text_blocking(line)
 
         # Planetenspezifisches Quiz
