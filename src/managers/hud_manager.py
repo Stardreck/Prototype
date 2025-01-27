@@ -49,6 +49,10 @@ class HUDManager:
         self.close_button_state_width = self.close_button_width // 3
         self.close_button_rect = pygame.Rect(self.game.screen.get_width() - 240, 120, self.close_button_state_width,
                                              self.close_button_height)
+        ##### inventory objects #####
+        self.inventory_empty_slot = pygame.image.load("assets/interface/inventory/inventory_empty_place.png")
+        self.inventory_empty_slot = pygame.transform.scale(self.inventory_empty_slot, (100, 100))
+
         ##### corner #####
         self.corner_decoration = pygame.image.load("assets/interface/hud/corner_decoration.png")
         self.corner_decoration = pygame.transform.scale(self.corner_decoration, (66, 76))
@@ -93,7 +97,40 @@ class HUDManager:
         self.game.screen.blit(title_text, (self.game.screen.get_width() // 2 - 70, 110))
         ##### close button #####
         close_button_image_state = self.close_button_image.subsurface(
-            self.game.sidebar_close_button_state.value * self.close_button_state_width, 0, self.close_button_state_width,
+            self.game.sidebar_close_button_state.value * self.close_button_state_width, 0,
+            self.close_button_state_width,
             self.close_button_height
         )
         self.game.screen.blit(close_button_image_state, self.close_button_rect.topleft)
+
+        ##### draw game objects #####
+        self.__draw_inventory_objects()
+
+    def __draw_inventory_objects(self):
+        # Center inventory grid
+        slot_width, slot_height = 100, 100
+        grid_rows, grid_cols = 2, 4
+        slot_spacing = 120
+
+        grid_width = grid_cols * slot_width + (grid_cols - 1) * (slot_spacing - slot_width)
+        grid_height = grid_rows * slot_height + (grid_rows - 1) * (slot_spacing - slot_height)
+
+        # coordinates for the first object
+        start_x = self.inventory_background_rect.left + (self.inventory_background_rect.width - grid_width) // 2
+        start_y = self.inventory_background_rect.top + (self.inventory_background_rect.height - grid_height) // 2
+
+        # get inventory objects, clone the list otherwise it would override it (call by reference)
+        objects = self.game.inventory_manager.get_items().copy()
+
+        # Draw inventory grid
+        for row in range(grid_rows):  # 2 rows
+            for col in range(grid_cols):  # 4 columns
+                x_pos = start_x + col * slot_spacing
+                y_pos = start_y + row * slot_spacing
+                if len(objects) != 0:
+                    inventory_active_slot = pygame.image.load(objects[0].image_path)
+                    inventory_active_slot = pygame.transform.scale(inventory_active_slot, (100, 100))
+                    self.game.screen.blit(inventory_active_slot, (x_pos, y_pos))
+                    objects.pop(0)
+                else:
+                    self.game.screen.blit(self.inventory_empty_slot, (x_pos, y_pos))

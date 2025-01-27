@@ -9,9 +9,11 @@ from games.game_data import GameData
 from managers.debug_manager import DebugManager
 from managers.event_manager import EventManager
 from managers.input_manager import InputManager
+from managers.inventory_manager import InventoryManager
 from managers.quiz_manager import QuizManager
 from managers.ui_manager import UIManager
 from star_engine import StarEngine
+
 
 class StoryGame(Game):
     def __init__(self, engine: StarEngine, data: GameData):
@@ -34,6 +36,10 @@ class StoryGame(Game):
         ##### Event Manager #####
         self.event_manager: EventManager = EventManager(self, data.event_cards, data.event_probability)
 
+        ##### Inventory Manager #####
+        self.inventory_manager = InventoryManager(self)
+        # debug
+        self.inventory_manager.add_item(data.game_objects[0])
 
         ##### Game Data #####
         self.data = data
@@ -153,7 +159,6 @@ class StoryGame(Game):
             self.is_inventory_open = False
             self.sidebar_close_button_state = ButtonState.IDLE
 
-
     def handle_touch_mouse_motion(self, event: pygame.event.Event):
         # mouse is hovering over the close button
         if self.ui_manager.hud.close_button_rect.collidepoint(event.pos) and self.is_inventory_open:
@@ -205,9 +210,6 @@ class StoryGame(Game):
 
             elif choice == 1:
                 pass
-
-
-
 
         # Planetenspezifisches Quiz
         quiz_data = self.quiz_manager.get_random_quiz_for_planet(planet.name)

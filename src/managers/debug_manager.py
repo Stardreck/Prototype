@@ -71,7 +71,8 @@ class DebugManager:
         ]
         game_stats_info = [
             f"GameStats:",
-            f"Error Count:"
+            f"Error Count:",
+            f"Inventory Items: {len(game.inventory_manager.get_items())}"
         ]
 
         # Debug text position
