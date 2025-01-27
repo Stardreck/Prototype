@@ -139,18 +139,23 @@ class StoryGame(Game):
 
     def handle_touch_mouse_down(self, event: pygame.event.Event):
         mouse_pos = event.pos
-        #
+        # Toggle inventory visibility when clicking the sidebar icon
         if self.ui_manager.hud.inventory_button_rect.collidepoint(mouse_pos):
             self.is_inventory_open = not self.is_inventory_open
 
+        # Set close button state to clicked while pressed
         elif self.is_inventory_open and self.ui_manager.hud.close_button_rect.collidepoint(mouse_pos):
-            self.is_inventory_open = False
+            self.sidebar_close_button_state = ButtonState.CLICKED
 
     def handle_touch_mouse_up(self, event: pygame.event.Event):
+        # close button released, close inventory
         if self.ui_manager.hud.close_button_rect.collidepoint(event.pos) and self.is_inventory_open:
+            self.is_inventory_open = False
             self.sidebar_close_button_state = ButtonState.IDLE
 
+
     def handle_touch_mouse_motion(self, event: pygame.event.Event):
+        # mouse is hovering over the close button
         if self.ui_manager.hud.close_button_rect.collidepoint(event.pos) and self.is_inventory_open:
             self.sidebar_close_button_state = ButtonState.HOVER
         else:
