@@ -2,6 +2,7 @@ from typing import Dict, List
 
 import pygame
 
+from enums.button_state import ButtonState
 from enums.color import Color
 from games.game import Game
 from games.game_data import GameData
@@ -56,6 +57,10 @@ class StoryGame(Game):
         self.planet_bg_half: Dict[str, pygame.Surface] = {}
 
         self.load_backgrounds()
+
+        ##### inventory #####
+        self.is_inventory_open: bool = False
+        self.sidebar_close_button_state: ButtonState = ButtonState.IDLE
 
     def load_backgrounds(self):
         try:
@@ -131,6 +136,25 @@ class StoryGame(Game):
             self.check_planet_visit()
         elif (move_row != 0 or move_column != 0):
             self.game_over("Kein Treibstoff mehr!")
+
+    def handle_touch_mouse_down(self, event: pygame.event.Event):
+        mouse_pos = event.pos
+        #
+        if self.ui_manager.hud.inventory_button_rect.collidepoint(mouse_pos):
+            self.is_inventory_open = not self.is_inventory_open
+
+        elif self.is_inventory_open and self.ui_manager.hud.close_button_rect.collidepoint(mouse_pos):
+            self.is_inventory_open = False
+
+    def handle_touch_mouse_up(self, event: pygame.event.Event):
+        if self.ui_manager.hud.close_button_rect.collidepoint(event.pos) and self.is_inventory_open:
+            self.sidebar_close_button_state = ButtonState.IDLE
+
+    def handle_touch_mouse_motion(self, event: pygame.event.Event):
+        if self.ui_manager.hud.close_button_rect.collidepoint(event.pos) and self.is_inventory_open:
+            self.sidebar_close_button_state = ButtonState.HOVER
+        else:
+            self.sidebar_close_button_state = ButtonState.IDLE
 
     def check_planet_visit(self):
         self.current_planet = None

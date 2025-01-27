@@ -1,10 +1,13 @@
 import pygame
 
+from games.game import Game
+
+
 class InputManager:
     """
     Handles user input and delegates actions to the game logic.
     """
-    def __init__(self, game):
+    def __init__(self, game: Game):
         """
         Initializes the InputManager with a reference to the game instance.
         :param game: The game instance that will receive input events.
@@ -20,8 +23,17 @@ class InputManager:
                 self.game.stop()
             elif event.type == pygame.KEYDOWN:
                 self.handle_keydown(event)
+            elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                self.handle_mouse_button_down(event)
+            elif event.type == pygame.MOUSEBUTTONUP:
+                self.handle_mouse_button_up(event)
+            elif event.type == pygame.MOUSEMOTION:
+                self.handle_mouse_motion(event)
 
-    def handle_keydown(self, event):
+
+
+
+    def handle_keydown(self, event: pygame.event.Event):
         """
         Handles keydown events and triggers game-specific actions.
         :param event: The pygame.KEYDOWN event.
@@ -42,3 +54,12 @@ class InputManager:
         #     self.game.move_player(0, -1)
         # elif event.key == pygame.K_RIGHT:
         #     self.game.move_player(0, 1)
+
+    def handle_mouse_button_down(self, event: pygame.event.Event):
+        self.game.handle_touch_mouse_down(event)
+
+    def handle_mouse_button_up(self,  event: pygame.event.Event):
+        self.game.handle_touch_mouse_up(event)
+
+    def handle_mouse_motion(self,  event: pygame.event.Event):
+        self.game.handle_touch_mouse_motion(event)

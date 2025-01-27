@@ -1,9 +1,11 @@
-# src/managers/ui_manager.py
+from __future__ import annotations
 
 import pygame
 from typing import List, TYPE_CHECKING, Optional
 
+from elements.buttons.action_button import ActionButton
 from enums.color import Color
+from managers.hud_manager import HUDManager
 from plugins.video_player import VideoPlayer
 
 if TYPE_CHECKING:
@@ -14,47 +16,27 @@ class UIManager:
     """
     Manages UI elements such as HUDs, overlays, and quiz interfaces.
     """
-
-    class Button:
-        def __init__(self, rect: pygame.Rect, text: str, font: pygame.font.Font,
-                     bg_color: tuple, text_color: tuple):
-            self.rect = rect
-            self.text = text
-            self.font = font
-            self.bg_color = bg_color
-            self.text_color = text_color
-            self.hover = False
-
-            self.text_surf = self.font.render(self.text, True, self.text_color)
-            self.text_rect = self.text_surf.get_rect(center=self.rect.center)
-
-        def draw(self, surface: pygame.Surface):
-            pygame.draw.rect(surface, self.bg_color, self.rect)
-            if self.hover:
-                pygame.draw.rect(surface, Color.BUTTON_HOVER.value, self.rect, 3)
-            else:
-                pygame.draw.rect(surface, Color.BUTTON_BG.value, self.rect, 3)
-            surface.blit(self.text_surf, self.text_rect)
-
-        def is_hovered(self, mouse_pos: tuple[int, int]) -> bool:
-            return self.rect.collidepoint(mouse_pos)
-
-    def __init__(self, game: "StoryGame") -> None:
+    def __init__(self, game: StoryGame) -> None:
         """
         Initialize the UIManager with a reference to the game instance.
         """
-        self.game: 'StoryGame' = game
+        self.game: StoryGame = game
         self.font_hud: pygame.font.Font = pygame.font.SysFont(None, 28)
         self.font_overlay: pygame.font.Font = pygame.font.SysFont(None, 24)
-        self.font_button: pygame.font.Font = pygame.font.SysFont(None, 32)  # Neue Font für Buttons
+        self.font_button: pygame.font.Font = pygame.font.SysFont(None, 32)
+
+        ##### HUD #####
+        self.hud = HUDManager(game)
+
+
+
 
     def draw_hud(self, surface: pygame.Surface) -> None:
         """
         Draw the HUD overlay showing fuel and hull.
         """
-        hud_line: str = f"Fuel: {self.game.fuel} | Hull: {self.game.hull}"
-        surf: pygame.Surface = self.font_hud.render(hud_line, True, Color.WHITE.value)
-        surface.blit(surf, (20, 20))
+        self.hud.draw(surface)
+
 
     def display_text_blocking(self, text: str) -> None:
         """
@@ -153,13 +135,13 @@ class UIManager:
         total_button_height = len(options) * (button_height + button_spacing) - button_spacing
         start_y = (overlay_height - total_button_height) // 2 + 60  # 60 pixels offset for the prompt
 
-        buttons: List[UIManager.Button] = []
+        buttons: List[ActionButton] = []
 
         for idx, option in enumerate(options):
             button_x = (overlay_width - button_width) // 2
             button_y = start_y + idx * (button_height + button_spacing)
             button_rect = pygame.Rect(button_x, button_y, button_width, button_height)
-            button = UIManager.Button(
+            button = ActionButton(
                 rect=button_rect,
                 text=option,
                 font=self.font_button,
