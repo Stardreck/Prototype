@@ -1,18 +1,20 @@
 [
-    {
-        "name": "TerraNova",
-        "row": 2,
-        "col": 3,
-        "visited": false,
-        "isFuelPlanet": false,
-        "bg_image": "assets/welcome_screen.jpeg"
-    },
-    {
-        "name": "Mars",
-        "row": 4,
-        "col": 6,
-        "visited": false,
-        "isFuelPlanet": true,
-        "bg_image": "assets/welcome_screen.jpeg"
-    }
+  {
+    "name": "TerraNova",
+    "row": 2,
+    "col": 3,
+    "visited": false,
+    "isFuelPlanet": false,
+    "background_image": "assets/welcome_screen.jpeg",
+    "cutscene": "assets/test_video02.mp4"
+  },
+  {
+    "name": "Mars",
+    "row": 4,
+    "col": 6,
+    "visited": false,
+    "isFuelPlanet": true,
+    "background_image": "assets/welcome_screen.jpeg",
+    "cutscene": "assets/test_video02.mp4"
+  }
 ]

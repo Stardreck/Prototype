@@ -14,5 +14,6 @@ class PlanetFactory:
             col=planet_data["col"],
             visited=planet_data.get("visited", False),
             is_fuel_planet=planet_data.get("isFuelPlanet", False),
-            bg_image=planet_data.get("bg_image")
+            background_image=planet_data.get("background_image"),
+            cutscene_media=planet_data.get("cutscene"),
         )

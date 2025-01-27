@@ -537,10 +537,10 @@ class StoryGame(Game):
         self.default_bg_half = pygame.transform.scale(img, (half_w, half_h))
 
         for planet in self.planets:
-            if not planet.bg_image:
+            if not planet.background_image:
                 continue
             try:
-                p_img = pygame.image.load(planet.bg_image).convert()
+                p_img = pygame.image.load(planet.background_image).convert()
             except:
                 p_img = pygame.Surface((self.engine.width, self.engine.height))
                 p_img.fill((80, 0, 0))

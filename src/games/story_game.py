@@ -70,10 +70,10 @@ class StoryGame(Game):
         self.default_bg_half = pygame.transform.scale(img, (half_w, half_h))
 
         for planet in self.data.planets:
-            if not planet.bg_image:
+            if not planet.background_image:
                 continue
             try:
-                p_img = pygame.image.load(planet.bg_image).convert()
+                p_img = pygame.image.load(planet.background_image).convert()
             except:
                 p_img = pygame.Surface((self.engine.width, self.engine.height))
                 p_img.fill((80, 0, 0))
@@ -168,7 +168,7 @@ class StoryGame(Game):
             # 1 = stay in orbit (fuel station)
             if choice == 0:
 
-                self.ui_manager.display_cutscene("assets/test_video02.mp4")
+                self.ui_manager.display_cutscene(planet.cutscene_media)
 
                 story = self.data.story_segments[planet.name]
                 for line in story.story_lines:
