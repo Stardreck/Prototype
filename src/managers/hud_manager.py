@@ -16,21 +16,20 @@ class HUDManager:
         self.__init_hud()
         self.font: pygame.font.Font = pygame.font.SysFont(None, 28)
 
+        self.hud_size = 50
+
     def __init_hud(self):
         hud_size = 50
         icon_size = 40
         ##### topbar #####
         self.topbar_background = pygame.image.load("assets/interface/hud/topbar_background.png")
-        self.topbar_background = pygame.transform.scale(self.topbar_background,
-                                                        (self.game.screen.get_width(), hud_size))
+
         ##### topbar ressource icons #####
         self.fuel_icon = pygame.image.load("assets/icons/fuel_icon.png")
         self.fuel_icon = pygame.transform.scale(self.fuel_icon, (icon_size, icon_size))
 
         ##### sidebar #####
         self.sidebar_background = pygame.image.load("assets/interface/hud/sidebar_background.png")
-        self.sidebar_background = pygame.transform.scale(self.sidebar_background,
-                                                         (hud_size, self.game.screen.get_height()))
         ##### sidebar elements #####
         self.inventory_button_image = pygame.image.load("assets/artifact.png")
         self.inventory_button_image = pygame.transform.scale(self.inventory_button_image, (icon_size, icon_size))
@@ -59,24 +58,28 @@ class HUDManager:
 
     def __draw_top_bar(self, surface: pygame.Surface):
         ##### topbar background #####
-        surface.blit(self.topbar_background, (0, 0))
+        topbar_surface = pygame.transform.scale(self.topbar_background, (surface.get_width(), self.hud_size))
+        surface.blit(topbar_surface, (0, 0))
         ##### fuel ressource #####
-        self.game.screen.blit(self.fuel_icon, (80, 5))
+        surface.blit(self.fuel_icon, (80, 5))
         fuel_text = self.font.render(f"{self.game.fuel}", True, Color.WHITE.value)
-        self.game.screen.blit(fuel_text, (130, 15))
+        surface.blit(fuel_text, (130, 15))
         ##### hull ressource #####
-        self.game.screen.blit(self.fuel_icon, (210, 5))
+        surface.blit(self.fuel_icon, (210, 5))
         hull_text = self.font.render(f"{self.game.hull}", True, Color.WHITE.value)
-        self.game.screen.blit(hull_text, (260, 15))
+        surface.blit(hull_text, (260, 15))
 
     def __draw_sidebar(self, surface: pygame.Surface):
         ##### sidebar background #####
-        self.game.screen.blit(self.sidebar_background, (0, 50))
+        sidebar_surface = pygame.transform.scale(self.sidebar_background,
+                                                         (self.hud_size, surface.get_height()))
+        surface.blit(sidebar_surface, (0, self.hud_size))
+
         ##### sidebar elements #####
-        self.game.screen.blit(self.inventory_button_image, self.inventory_button_rect)
+        surface.blit(self.inventory_button_image, self.inventory_button_rect)
 
     def __draw_corner(self, surface: pygame.Surface):
-        self.game.screen.blit(self.corner_decoration, (0, 0))
+        surface.blit(self.corner_decoration, (0, 0))
 
     def draw(self, surface: pygame.Surface):
         """

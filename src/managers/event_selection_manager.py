@@ -49,19 +49,39 @@ class EventSelectionManager:
                 return selected_event
         return None
 
+    def check_for_forced_events(self) -> EventCard | None:
+        """
+        Check if an event meets the condition (like game_over) and must be forced
+        """
+        all_events = self.negative_events + self.positive_events
+
+        for event in all_events:
+
+            if event.category == "game_over":
+                # check if a game_over condition is met
+                if self.__check_conditions(event):
+                    return event
+
+        return None
+
     def __check_conditions(self, event_card: EventCard) -> bool:
         """
         Check if the event meets the required conditions.
         :param event_card: The EventCard to check.
         :return: True if conditions are met, False otherwise.
         """
+        if len(event_card.required_conditions.items()) == 0:
+            return True
+
         for key, value in event_card.required_conditions.items():
-            if key == "min_fuel" and self.game.fuel < value:
-                return False
-            if key == "min_hull" and self.game.hull < value:
-                return False
+            if key == "min_fuel" and self.game.fuel > value:
+                return True
+            if key == "min_hull" and self.game.hull > value:
+                return True
+            if key == "quiz_error_count" and self.error_count >= value:
+                return True
             # Add more conditions as needed
-        return True
+        return False
 
     def apply_event_scaling(self, event_card: EventCard):
         """

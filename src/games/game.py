@@ -28,6 +28,7 @@ class Game(ABC):
     @abstractmethod
     def handle_touch_mouse_up(self, event: pygame.event.Event):
         pass
+
     @abstractmethod
     def handle_touch_mouse_motion(self, event: pygame.event.Event):
         pass

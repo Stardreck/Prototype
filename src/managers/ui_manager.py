@@ -29,8 +29,6 @@ class UIManager:
         self.hud = HUDManager(game)
 
 
-
-
     def draw_hud(self, surface: pygame.Surface) -> None:
         """
         Draw the HUD overlay showing fuel and hull.

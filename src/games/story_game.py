@@ -182,6 +182,12 @@ class StoryGame(Game):
                 break
 
         ##### events #####
+        executed_forced_card = self.event_manager.check_for_forced_events()
+        if executed_forced_card:
+            if executed_forced_card.category == "game_over":
+                self.game_over(executed_forced_card.description)
+                return
+
         if self.event_manager.should_trigger_event():
             self.event_manager.trigger_random_event()
 

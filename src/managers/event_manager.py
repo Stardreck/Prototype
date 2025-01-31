@@ -42,13 +42,26 @@ class EventManager:
 
     def trigger_random_event(self):
         """
-        Check if an event should be triggered and handle it.
+        get a random event and show it
         """
         card = self.selection_manager.pick_event()
         if card:
             self.selection_manager.apply_event_scaling(card)
             self.display_event_card_animated(card)
             self.apply_event_effects(card)
+
+
+    def check_for_forced_events(self) -> EventCard | None:
+        forced_card = self.selection_manager.check_for_forced_events()
+        if forced_card:
+            self.selection_manager.apply_event_scaling(forced_card)
+            self.display_event_card_animated(forced_card)
+            self.apply_event_effects(forced_card)
+            return forced_card
+
+        return None
+
+
 
     def should_trigger_event(self) -> bool:
         """Determine if an event should be triggered."""
