@@ -27,6 +27,7 @@ class QuizManager:
         self.game: StoryGame = game
         self.font: pygame.font.Font = pygame.font.SysFont(None, 24)
         self.is_quiz_present: False
+        self.last_result_is_correct: False
 
     def get_random_quiz_for_planet(self, planet_name: str) -> Optional[dict]:
         """
@@ -115,6 +116,8 @@ class QuizManager:
             if self.is_quiz_present:
                 self._render_quiz_overlay(question, user_input, is_task, answer_data if not is_task else None)
 
+        confirm_button.set_on_click(None)
+
     def _process_user_input(self, user_input: str,
                             answer_data,
                             correct_idx: Optional[int],
@@ -134,6 +137,9 @@ class QuizManager:
                 is_correct = abs(user_value - answer_data) <= tolerance
             else:
                 is_correct = int(user_input) == correct_idx
+
+            # store is_correct for the next iteration
+            self.last_result_is_correct = is_correct
 
             if is_correct:
                 self._display_feedback("Correct answer!")

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import pygame
-from typing import List, TYPE_CHECKING, Optional
+from typing import List, TYPE_CHECKING, Optional, cast
 
 from components.ui.buttons.action_button import ActionButton
 from components.ui.buttons.button import Button
@@ -150,6 +150,58 @@ class UIManager:
         Draw the HUD overlay showing fuel and hull.
         """
         self.hud.draw(surface)
+
+    def display_message_overlay(self, message: str) -> None:
+        """
+        Displays an overlay message with a single confirm button ("Bestätigen").
+        When the confirm button is clicked, the overlay is dismissed.
+        """
+        # Set the overlay message on the default panel subtitle.
+        subtitle = cast(MultiLineText, self.ui_components.get("default_panel_subtitle"))
+        subtitle.set_text(message)
+
+        # Create a temporary confirm button with the same style as the default one.
+        default_confirm = cast(Button, self.ui_components.get("default_panel_confirm_button"))
+        temp_confirm_button = Button(
+            rect=default_confirm.rect,
+            color=default_confirm.color,
+            hover_color=default_confirm.hover_color,
+            corner_radius=default_confirm.corner_radius,
+            text="Bestätigen",
+            font=default_confirm.font,
+            text_color=default_confirm.text_color
+        )
+
+        # A flag to know when the button has been pressed.
+        confirmed = [False]
+
+        # Define the callback that sets the confirmation flag.
+        def on_confirm():
+            print("Confirm button pressed!")
+            confirmed[0] = True
+
+        temp_confirm_button.set_on_click(on_confirm)
+
+        # Run the overlay loop until the confirm button is pressed.
+        while not confirmed[0] and self.game.is_running:
+            # Process events.
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.game.stop()
+                    return
+                temp_confirm_button.handle_event(event)
+            # Draw the overlay using the default panel background and panel.
+            target_surface = self.game.screen
+            self.ui_components["default_panel_bg"].draw(target_surface)
+            self.ui_components["default_panel"].draw(target_surface)
+            subtitle.draw(target_surface)
+            temp_confirm_button.draw(target_surface)
+            pygame.display.flip()
+            pygame.time.delay(50)
+
+        temp_confirm_button.set_on_click(None)
+
+        # Once confirmed, exit the loop (temp_confirm_button will be garbage-collected).
 
     def display_text_blocking(self, text: str) -> None:
         """

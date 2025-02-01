@@ -237,6 +237,8 @@ class StoryGame(Game):
                 for key, component in self.ui_manager.ui_components.items():
                     component.handle_event(event)
 
+            self.draw()
+
             self.render_planet_menu_overlay(planet)
 
         # reset callback
@@ -269,6 +271,8 @@ class StoryGame(Game):
                 for key, component in self.ui_manager.ui_components.items():
                     component.handle_event(event)
 
+            self.draw()
+
             self.render_planet_station_overlay(planet)
 
         # reset callback
@@ -276,13 +280,59 @@ class StoryGame(Game):
         second_button.set_on_click(None)
 
     def handle_planet_station_choice(self, planet: Planet, choice: int):
+        """
+        Handle the player's selection at the planet station.
+
+        If choice == 1, present a quiz (or task) to the player. If the player answers
+        correctly, add +10 fuel and display a message indicating success. If the answer
+        is wrong, add +3 fuel and display a message indicating the incorrect answer but reward.
+
+        If choice == 2, no challenge is presented and the player receives +5 fuel along with
+        a message stating that the ship has been refueled.
+
+        Afterwards, the planet menu is shown again.
+        """
+        message = ""
+        if choice == 1:
+            # Present a quiz or task challenge
+            # Try to get a quiz designated for the station challenge.
+            quiz_data = self.quiz_manager.get_random_quiz_for_planet("default")
+            # Run the quiz scene. We assume that after the quiz is finished,
+            # the quiz manager sets an attribute 'last_result' (True if correct, False if wrong).
+            self.quiz_manager.run_quiz_scene(quiz_data)
+
+
+            # Check the result of the quiz challenge
+            if self.quiz_manager.last_result_is_correct:
+                self.fuel += 10
+                message = "Correct! You have received +10 fuel."
+                self.quiz_manager.last_result_is_correct = False
+            else:
+                self.fuel += 3
+                message = "Incorrect! You still receive +3 fuel."
+        elif choice == 2:
+            # No challenge; simply add +5 fuel
+            self.fuel += 5
+            message = "The ship has been refueled: +5 fuel received."
+
+        self.is_planet_station_menu_present = False
+
+        # Display the overlay message using the new UI method.
+        self.ui_manager.display_message_overlay(message)
+
+        # After handling the station choice, return to the planet menu overlay.
+        self.run_planet_menu_loop(planet)
+
+    def handle_planet_station_choicex(self, planet: Planet, choice: int):
         # todo implement logic
         # solve quiz
         if choice == 1:
-            self.fuel += 5
+            # display a quiz or task, if quiz or task is solved correctly add fuel + 10, if not add fuel +3
+            # display message that shows the added fuel and if solved correctly or wrongly
             pass
         # get free fuel
         if choice == 2:
+            # display message that the ship has been refueled with +5
             self.fuel += 5
             pass
 

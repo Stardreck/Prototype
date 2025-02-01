@@ -29,6 +29,7 @@ class Button(UIComponent):
         self.on_click_callback = None
 
     def set_on_click(self, callback):
+        print("[Button] set_on_click: ", callback)
         """
         Assign a function that should be called when the button is clicked.
         """
