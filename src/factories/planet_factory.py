@@ -10,6 +10,7 @@ class PlanetFactory:
     def create_planet(planet_data: Dict[str, Any]) -> Planet:
         return Planet(
             name=planet_data["name"],
+            description=planet_data["description"],
             row=planet_data["row"],
             col=planet_data["col"],
             visited=planet_data.get("visited", False),

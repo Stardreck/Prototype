@@ -24,12 +24,12 @@ class GameData:
         self.event_probability = config.event_probability
 
     def load_game_objects(self, path: Path) -> List[GameObject]:
-        with open(path, "r") as file:
+        with open(path, "r", encoding="utf-8") as file:
             game_object_data = json.load(file)
         return [GameObjectFactory.create_game_object(object) for object in game_object_data]
 
     def load_quizzes(self, path: Path) -> Dict[str, List[Dict[str, Any]]]:
-        with open(path, "r") as file:
+        with open(path, "r", encoding="utf-8") as file:
             return json.load(file)
 
     def load_stories(self, path: Path) -> dict[Any, Story]:
@@ -38,11 +38,11 @@ class GameData:
         return {planet: StoryFactory.create_story(data) for planet, data in story_data.items()}
 
     def load_events(self, path: Path) -> List[EventCard]:
-        with open(path, "r") as file:
+        with open(path, "r", encoding="utf-8") as file:
             event_data = json.load(file)
         return [EventFactory.create_event(event) for event in event_data]
 
     def load_planets(self, path: Path) -> List[Planet]:
-        with open(path, "r") as file:
+        with open(path, "r", encoding="utf-8") as file:
             planet_data = json.load(file)
         return [PlanetFactory.create_planet(planet) for planet in planet_data]

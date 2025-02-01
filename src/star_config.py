@@ -22,7 +22,7 @@ class StarConfig:
         config_file = Path(config_path)
         if not config_file.is_file():
             raise FileNotFoundError(f"Configuration file not found: {config_path}")
-        with open(config_file, "r") as file:
+        with open(config_file, "r", encoding="utf-8") as file:
             return json.load(file)
 
     def validate(self) -> None:

@@ -1,13 +1,18 @@
+from __future__ import annotations
 import pygame
 
-from games.game import Game
+from typing import List, TYPE_CHECKING, Optional
+
+if TYPE_CHECKING:
+    from games.story_game import StoryGame
+
 
 
 class InputManager:
     """
     Handles user input and delegates actions to the game logic.
     """
-    def __init__(self, game: Game):
+    def __init__(self, game: StoryGame):
         """
         Initializes the InputManager with a reference to the game instance.
         :param game: The game instance that will receive input events.
@@ -30,7 +35,8 @@ class InputManager:
             elif event.type == pygame.MOUSEMOTION:
                 self.handle_mouse_motion(event)
 
-
+            for key, component in self.game.ui_manager.ui_components.items():
+                component.handle_event(event)
 
 
     def handle_keydown(self, event: pygame.event.Event):

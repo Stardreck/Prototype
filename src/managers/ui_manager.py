@@ -3,7 +3,13 @@ from __future__ import annotations
 import pygame
 from typing import List, TYPE_CHECKING, Optional
 
-from elements.buttons.action_button import ActionButton
+from components.ui.buttons.action_button import ActionButton
+from components.ui.buttons.button import Button
+from components.ui.image import Image
+from components.ui.multiline_text import MultiLineText
+from components.ui.panel import Panel
+from components.ui.text import Text
+from components.ui.ui_component import UIComponent
 from enums.color import Color
 from managers.hud_manager import HUDManager
 from plugins.video_player import VideoPlayer
@@ -16,6 +22,7 @@ class UIManager:
     """
     Manages UI elements such as HUDs, overlays, and quiz interfaces.
     """
+
     def __init__(self, game: StoryGame) -> None:
         """
         Initialize the UIManager with a reference to the game instance.
@@ -28,13 +35,121 @@ class UIManager:
         ##### HUD #####
         self.hud = HUDManager(game)
 
+        ##### init UI components #####
+        # default panel
+        self.default_panel_bg = Panel(
+            pygame.Rect(528, 123, 545, 473),
+            (16, 26, 23, 230),  # with alpha
+            corner_radius=12
+        )
+        self.default_panel = Panel(
+            pygame.Rect(538, 130, 525, 399),
+            (10, 17, 15),  # no alpha
+            corner_radius=12
+        )
+        self.default_panel_title = Text("",
+                                        self.font_overlay,
+                                        (255, 255, 255),
+                                        (538 + 221, 130 + 15))
+
+        self.default_panel_subtitle = MultiLineText(
+            text="",
+            font=self.font_overlay,
+            color=(255, 255, 255),
+            position=(538 + 20, 130 + 70),
+            max_width=492,
+            line_spacing=5
+        )
+        self.default_panel_confirm_button = Button(
+            rect=pygame.Rect(self.default_panel_bg.rect.centerx - 262,
+                             self.default_panel_bg.rect.bottom - 50,
+                             525,
+                             39),
+            color=(23, 78, 56),
+            hover_color=(24, 39, 33),
+            corner_radius=12,
+            text="Bestätigen",
+            font=self.font_button,
+            text_color=(255, 255, 255)
+        )
+        # choice panel (with image, text and 2 buttons
+        self.choice_panel_bg = Panel(
+            pygame.Rect(528, 123, 545, 473),
+            (16, 26, 23, 230),  # with alpha
+            corner_radius=12
+        )
+        self.choice_panel = Panel(
+            pygame.Rect(538, 130, 525, 333),
+            (10, 17, 15),  # no alpha
+            corner_radius=12
+        )
+        self.choice_panel_imge = Image(
+            image_path="",
+            position=(549, 169),
+            width=241,
+            height=257
+        )
+        self.choice_panel_title = Text(
+            text="",
+            font=self.font_overlay,
+            color=(255, 255, 255),
+            position=(800, 169)
+        )
+        self.choice_panel_description = MultiLineText(
+            text="",
+            font=self.font_overlay,
+            color=(255, 255, 255),
+            position=(800, 229),
+            max_width=246,
+            line_spacing=5
+        )
+
+        self.choice_panel_second_button = Button(
+            rect=pygame.Rect(self.default_panel_bg.rect.centerx - 262,
+                             self.default_panel_bg.rect.bottom - 50,
+                             525,
+                             39),
+            color=(23, 78, 56),
+            hover_color=(24, 39, 33),
+            corner_radius=12,
+            text="",
+            font=self.font_button,
+            text_color=(255, 255, 255)
+        )
+        self.choice_panel_first_button = Button(
+            rect=pygame.Rect(self.choice_panel_second_button.rect.left,
+                             self.choice_panel_second_button.rect.top - 60,
+                             525,
+                             39),
+            color=(23, 78, 56),
+            hover_color=(24, 39, 33),
+            corner_radius=12,
+            text="",
+            font=self.font_button,
+            text_color=(255, 255, 255)
+        )
+
+
+        self.ui_components: dict[str, UIComponent] = {
+            "default_panel_bg": self.default_panel_bg,
+            "default_panel": self.default_panel,
+            "default_panel_title": self.default_panel_title,
+            "default_panel_subtitle": self.default_panel_subtitle,
+            "default_panel_confirm_button": self.default_panel_confirm_button,
+            "choice_panel_bg": self.choice_panel_bg,
+            "choice_panel": self.choice_panel,
+            "choice_panel_second_button": self.choice_panel_second_button,
+            "choice_panel_first_button": self.choice_panel_first_button,
+            "choice_panel_title": self.choice_panel_title,
+            "choice_panel_description": self.choice_panel_description,
+            "choice_panel_image": self.choice_panel_imge,
+        }
 
     def draw_hud(self, surface: pygame.Surface) -> None:
         """
         Draw the HUD overlay showing fuel and hull.
         """
         self.hud.draw(surface)
-
 
     def display_text_blocking(self, text: str) -> None:
         """
@@ -255,7 +370,6 @@ class UIManager:
                 self.game.screen.blit(message_surf, message_rect)
                 pygame.display.flip()
                 clock.tick(60)
-
 
     @staticmethod
     def wrap_text(text: str, font: pygame.font.Font, max_width: int) -> List[str]:

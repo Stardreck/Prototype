@@ -1,6 +1,7 @@
 [
   {
     "name": "TerraNova",
+    "description": "Dies ist eine Beschreibung des Planeten Terra Nova blah blah blah blah sehr spânnend jop mol findi au. öüäüäöü!£",
     "row": 2,
     "col": 3,
     "visited": false,
@@ -10,6 +11,7 @@
   },
   {
     "name": "Mars",
+    "description": "wa wötsch vo mir?",
     "row": 4,
     "col": 6,
     "visited": false,
