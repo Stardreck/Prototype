@@ -1,0 +1,25 @@
+{
+  "button": {
+    "colours": {
+      "normal_bg": "#00640080",
+      "hovered_bg": "#00800080"
+    },
+    "misc": {
+      "border_width": "0",
+      "shape": "rounded_rectangle",
+      "shape_corner_radius": "12"
+    }
+  },
+  "panel": {
+    "colours": {
+      "dark_bg": "#21282D",
+      "normal_border": "#999999"
+    },
+    "misc": {
+      "shape": "rounded_rectangle",
+      "shape_corner_radius": "25",
+      "border_width": "1",
+      "shadow_width": "15"
+    }
+  }
+}

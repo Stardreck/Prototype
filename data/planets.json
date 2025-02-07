@@ -7,7 +7,7 @@
     "visited": false,
     "isFuelPlanet": false,
     "background_image": "assets/welcome_screen.jpeg",
-    "cutscene": "assets/test_video02.mp4"
+    "cutscene": "assets/video_planet_sequence.mp4"
   },
   {
     "name": "Mars",
